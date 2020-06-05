@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import "../index.scss"
+import NavBar from "../components/NavBar/NavBar"
 
 export default function Home({ data }) {
   console.log(data)
   return (
     <div>
+      <NavBar />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
