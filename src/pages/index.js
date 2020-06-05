@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import "../index.scss"
 
 export default function Home({ data }) {
   console.log(data)
   return (
     <div>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
