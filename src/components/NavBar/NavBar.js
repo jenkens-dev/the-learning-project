@@ -7,14 +7,14 @@ export default function NavBar() {
   return (
     <nav>
       <ul className="menu">
-        <li className="logo">
+        <li className="logo navItem">
           <a>Home</a>
         </li>
         <div className="secondMenu">
-          <li className="item">
+          <li className="item navItem">
             <a>All Posts</a>
           </li>
-          <IconContext.Provider value={{ className: "icon" }}>
+          <IconContext.Provider value={{ className: "icon navItem" }}>
             <AiFillGithub />
             <AiOutlineTwitter />
           </IconContext.Provider>

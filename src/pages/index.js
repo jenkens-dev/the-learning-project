@@ -8,17 +8,19 @@ export default function Home({ data }) {
   return (
     <div>
       <NavBar />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link to={node.fields.slug}>
-            <h3>
-              {node.frontmatter.title} <span>— {node.frontmatter.date}</span>{" "}
-              <span>: {node.frontmatter.status}</span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </Link>
-        </div>
-      ))}
+      <div className="blogPosts">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div key={node.id}>
+            <Link to={node.fields.slug}>
+              <h3>
+                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>{" "}
+                <span>: {node.frontmatter.status}</span>
+              </h3>
+              <p>{node.excerpt}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

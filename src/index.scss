@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Roboto&display=swap");
+
 html {
   background-color: #5cdb95;
-}
+  margin: 0 auto;
+  font-family: "Barlow", sans-serif;
 
+  .blogPosts {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+}
 a {
   text-decoration: none;
   color: #edf5e1;

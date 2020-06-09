@@ -1,6 +1,12 @@
 nav {
+  max-width: 85%;
+  margin: 0 auto;
+  .navItem {
+    margin: 10px;
+  }
   a {
     color: #05386b;
+    font-size: 1.15rem;
   }
   ul {
     all: unset;
@@ -10,7 +16,8 @@ nav {
   }
   .icon {
     color: #05386b;
-    size: 1.5em;
+    height: 1.15rem;
+    width: 1.15rem;
   }
   .secondMenu {
     display: flex;
