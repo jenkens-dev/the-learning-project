@@ -1,7 +1,7 @@
 ---
 title: "React Redux with Hooks"
 date: "2020-03-07"
-status: "Bloomed"
+status: 🌸
 ---
 
 If you're not familiar with [Redux](https://dev.to/talia/beginner-s-guide-to-react-redux-585e) or [hooks](https://dev.to/talia/react-hooks-1nme) feel free to check out my other articles explaining the topics and then come back! When I was first learning Redux I found all the moving parts and files incredibly hard to wrap my head around. Surprisingly, React hooks made the process of using Redux a lot easier for me. Hooks allow us to write smaller and sometimes easier to read functional components and with Redux hooks we can eliminate the tedious and confusing connect, mapStateToProps, and mapDispatchToProps.

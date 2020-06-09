@@ -1,7 +1,7 @@
 ---
 title: "New Additions to JavaScript"
 date: "2020-01-03"
-status: "Bloomed"
+status: 🌸
 ---
 
 The language of JavaScript is constantly being updated. Any new ideas or features that want to be added to the language are brought to the TC39 committee. TC39 is responsible for creating, approving, or denying proposals, and it is made up of delegates. ECMA which oversees TC39 standardizes the language specifications. 

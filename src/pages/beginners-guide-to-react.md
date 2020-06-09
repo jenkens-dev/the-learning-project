@@ -1,7 +1,7 @@
 ---
 title: "Beginner's Guide to React"
 date: "2019-11-26"
-status: "Bloomed"
+status: 🌸
 ---
 
 # Beginner’s Guide to React

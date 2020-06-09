@@ -15,8 +15,12 @@ export default function NavBar() {
             <a>All Posts</a>
           </li>
           <IconContext.Provider value={{ className: "icon navItem" }}>
-            <AiFillGithub />
-            <AiOutlineTwitter />
+            <a href="https://github.com/Taljjaa">
+              <AiFillGithub />
+            </a>
+            <a href="https://twitter.com/jenkens_">
+              <AiOutlineTwitter />
+            </a>
           </IconContext.Provider>
         </div>
       </ul>

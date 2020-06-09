@@ -8,6 +8,10 @@ html {
   .blogPosts {
     max-width: 880px;
     margin: 0 auto;
+
+    .blogPostTitle {
+      font-family: "Roboto", sans-serif;
+    }
   }
 }
 a {

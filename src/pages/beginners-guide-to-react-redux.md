@@ -1,7 +1,7 @@
 ---
 title: "Beginner's Guide to React Redux"
 date: "2020-03-01"
-status: "Bloomed"
+status: 🌸
 ---
 
 Redux is a library used to contain the state of your application in one single location. Redux is language-agnostic and can be used with React, Vue, Angular, or even vanilla JS. I really love using Redux with React. As our React apps become bigger and more complicated the state can get unwieldy and hard to pass around to different components. This is where Redux can help us. It's generally recommended to start with Redux at the beginning of creating your project but it's not impossible to convert a project to using Redux.

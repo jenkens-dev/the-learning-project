@@ -1,7 +1,7 @@
 ---
 title: "What is Testing?"
 date: "2019-12-06"
-status: "Bloomed"
+status: 🌸
 ---
 
 ## Why Do We Test?
