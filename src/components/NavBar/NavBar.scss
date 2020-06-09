@@ -1,8 +1,18 @@
 nav {
-  display: flex;
-}
-
-nav a {
-  text-decoration: none;
-  color: #05386b;
+  a {
+    color: #05386b;
+  }
+  ul {
+    all: unset;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon {
+    color: #05386b;
+    size: 1.5em;
+  }
+  .secondMenu {
+    display: flex;
+  }
 }
