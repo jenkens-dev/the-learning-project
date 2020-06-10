@@ -141,5 +141,6 @@ export default AnimeCard
 Not only did we save about 10 lines of code, personally I think it became a lot easier to read and write. And because we aren’t using the connect higher-order component anymore our render tree is much cleaner. I hope you enjoyed this blog post and are thinking about using Redux with hooks in one of your upcoming projects. Feel free to comment with any questions!
 
 Favorite Resources:
-React-Redux [docs](https://react-redux.js.org/api/hooks)
-Using Redux with React Hooks [article](https://thoughtbot.com/blog/using-redux-with-react-hooks)
+
+- React-Redux [docs](https://react-redux.js.org/api/hooks)
+- Using Redux with React Hooks [article](https://thoughtbot.com/blog/using-redux-with-react-hooks)

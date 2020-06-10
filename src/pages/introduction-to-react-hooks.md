@@ -74,6 +74,7 @@ Above is an example of a useEffect hook I used in my final project at Flatiron. 
 I hope you've enjoyed this beginner introduction to hooks! There's still a lot of cool things out there to learn and I hope this gets you on the right path.
 
 Favorite Resources:
-[React Docs](https://reactjs.org/docs/hooks-intro.html)
-[React Hooks Tutorial for Beginners by Valentino Gagliardi](https://www.valentinog.com/blog/hooks/)
-[React Hooks Video by Tyler McGinnis](https://tylermcginnis.com/why-react-hooks/)
+
+- [React Docs](https://reactjs.org/docs/hooks-intro.html)
+- [React Hooks Tutorial for Beginners by Valentino Gagliardi](https://www.valentinog.com/blog/hooks/)
+- [React Hooks Video by Tyler McGinnis](https://tylermcginnis.com/why-react-hooks/)

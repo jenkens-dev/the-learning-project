@@ -4,8 +4,6 @@ date: "2019-11-26"
 status: 🌻
 ---
 
-# Beginner’s Guide to React
-
 React is a JavaScript library, created by Facebook and open-sourced in 2013. React was created to help build simple and reusable interfaces. The main idea was to divide the UI into small individual components. These individual and reusable components are the core feature of React. The important pieces to understand about React are Components, JSX, State, and Props.
 
 ## Components
