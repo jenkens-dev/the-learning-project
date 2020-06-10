@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import "../index.scss"
 import NavBar from "../components/NavBar/NavBar"
 
@@ -7,6 +8,13 @@ export default function Home({ data }) {
   console.log(data)
   return (
     <div>
+      <div className="application">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>The Learning Project</title>
+          <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+        </Helmet>
+      </div>
       <NavBar />
       <div className="blogPosts">
         {data.allMarkdownRemark.edges.map(({ node }) => (
