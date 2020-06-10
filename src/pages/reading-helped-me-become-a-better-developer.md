@@ -1,7 +1,7 @@
 ---
 title: "Reading helped me become a better developer"
 date: "2020-03-14"
-status: 🌸
+status: 🌻
 ---
 
 Since I was younger I've always loved reading. I was able to explore new places and learn so many new things without having to experience these things myself. I'm convinced my love of reading has helped me level up as a developer. Here are my three favorite sources to read from.

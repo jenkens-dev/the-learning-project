@@ -1,7 +1,7 @@
 ---
 title: "Why you should start blogging"
 date: "2019-11-11"
-status: 🌸
+status: 🌻
 ---
 
 So you’re looking to write your first blog post? Blogging is great practice for both new and experienced developers. I encourage everyone to at least try blogging as it can be a big benefit both you and your potential readers. You don’t need to be an expert to release a blog post. Writing about a topic and researching it can help you teach yourself. So find a journal, some fun topics, and get writing!

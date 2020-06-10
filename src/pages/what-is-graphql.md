@@ -1,7 +1,7 @@
 ---
 title: "What is GraphQL"
 date: "2020-03-21"
-status: 🌸
+status: 🌻
 ---
 
 ## What is GraphQL
