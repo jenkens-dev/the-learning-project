@@ -8,7 +8,7 @@ export default function NavBar() {
     <nav>
       <ul className="menu">
         <li className="logo navItem">
-          <a>Home</a>
+          <a href="/">Home</a>
         </li>
         <div className="secondMenu">
           <li className="item navItem">
