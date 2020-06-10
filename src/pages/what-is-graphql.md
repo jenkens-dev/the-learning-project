@@ -1,10 +1,8 @@
 ---
 title: "What is GraphQL"
 date: "2020-03-21"
-status: "Bloomed"
+status: 🌻
 ---
-
-## What is GraphQL
 
 GraphQL is a query language for APIs invented and open-sourced by Facebook. It can be used as an alternative to REST and boasts a lot of advantages. GraphQL was originally made to keep up with the increase in mobile device usage because it helps limit the amount of data sent. Normally we use different endpoints to get data from a server and display it to the client and we are forced to accept whatever data the endpoint gives us. GraphQL uses declarative data fetching meaning the client can define exactly what they want from the API. GraphQL has a lot of moving pieces so my goal with this series of posts is to break them down into manageable chunks.
 
@@ -26,5 +24,5 @@ GraphQL has become extremely popular and is definitely picking up speed. I hope 
 
 ### Additional Resources
 
-[How To GraphQl](https://www.howtographql.com/basics/0-introduction/)
-[Apollo Docs](https://www.apollographql.com/docs/intro/benefits/)
+- [How To GraphQL](https://www.howtographql.com/basics/0-introduction/)
+- [Apollo Docs](https://www.apollographql.com/docs/intro/benefits/)

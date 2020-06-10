@@ -1,11 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
     title: `The Learning Project`,
   },
@@ -19,5 +12,20 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "The Learning Project",
+        short_name: "The Learning Project",
+        description: "The Learning Project",
+        start_url: "/",
+        background_color: "#5cdb95",
+        theme_color: "#6b37bf",
+        display: "standalone",
+        icon: "src/images/icon.png",
+        crossOrigin: `use-credentials`,
+      },
+    },
   ],
 }

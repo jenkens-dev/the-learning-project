@@ -1,7 +1,7 @@
 ---
 title: "Introduction to React Hooks"
 date: "2020-02-22"
-status: "Bloomed"
+status: 🌻
 ---
 
 React hooks were added to React in February 2019. One of their main features is they give us a way to use state without having to define a class component. Our functional components can now have features that were specific to class components like state and lifecycles. Without large class components in our code, it is easier and cleaner to read. Using hooks helps simplify state management and component layouts. Hooks are completely optional and backward-compatible. This means that all our working knowledge of React isn’t obsolete, but can be grown and updated. Hooks were proposed to solve some of React’s problems like sharing state, components becoming unwieldy as they grew more complex, and confusing class syntax.
@@ -74,6 +74,7 @@ Above is an example of a useEffect hook I used in my final project at Flatiron. 
 I hope you've enjoyed this beginner introduction to hooks! There's still a lot of cool things out there to learn and I hope this gets you on the right path.
 
 Favorite Resources:
-[React Docs](https://reactjs.org/docs/hooks-intro.html)
-[React Hooks Tutorial for Beginners by Valentino Gagliardi](https://www.valentinog.com/blog/hooks/)
-[React Hooks Video by Tyler McGinnis](https://tylermcginnis.com/why-react-hooks/)
+
+- [React Docs](https://reactjs.org/docs/hooks-intro.html)
+- [React Hooks Tutorial for Beginners by Valentino Gagliardi](https://www.valentinog.com/blog/hooks/)
+- [React Hooks Video by Tyler McGinnis](https://tylermcginnis.com/why-react-hooks/)

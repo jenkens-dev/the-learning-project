@@ -1,7 +1,7 @@
 ---
 title: "React Redux with Hooks"
 date: "2020-03-07"
-status: "Bloomed"
+status: 🌻
 ---
 
 If you're not familiar with [Redux](https://dev.to/talia/beginner-s-guide-to-react-redux-585e) or [hooks](https://dev.to/talia/react-hooks-1nme) feel free to check out my other articles explaining the topics and then come back! When I was first learning Redux I found all the moving parts and files incredibly hard to wrap my head around. Surprisingly, React hooks made the process of using Redux a lot easier for me. Hooks allow us to write smaller and sometimes easier to read functional components and with Redux hooks we can eliminate the tedious and confusing connect, mapStateToProps, and mapDispatchToProps.
@@ -141,5 +141,6 @@ export default AnimeCard
 Not only did we save about 10 lines of code, personally I think it became a lot easier to read and write. And because we aren’t using the connect higher-order component anymore our render tree is much cleaner. I hope you enjoyed this blog post and are thinking about using Redux with hooks in one of your upcoming projects. Feel free to comment with any questions!
 
 Favorite Resources:
-React-Redux [docs](https://react-redux.js.org/api/hooks)
-Using Redux with React Hooks [article](https://thoughtbot.com/blog/using-redux-with-react-hooks)
+
+- React-Redux [docs](https://react-redux.js.org/api/hooks)
+- Using Redux with React Hooks [article](https://thoughtbot.com/blog/using-redux-with-react-hooks)
