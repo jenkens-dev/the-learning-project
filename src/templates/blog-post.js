@@ -8,9 +8,9 @@ export default function BlogPost({ data }) {
   return (
     <>
       <NavBar />
-      <div className="blogPostContent">
+      <div className="blogPost">
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} className="blogPostContent"/>
       </div>
     </>
   )

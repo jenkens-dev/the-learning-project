@@ -1,4 +1,8 @@
-.blogPostContent {
+.blogPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 880px;
   margin: 0 auto;
   color: #edf5e1;
@@ -9,6 +13,13 @@
 
   h2 {
     color: #05386b;
+  }
+
+  .blogPostContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   li {
