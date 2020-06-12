@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../index.scss"
 import NavBar from "../components/NavBar/NavBar"
+import About from "../components/About/About"
 
 export default function Home({ data }) {
   console.log(data)
@@ -16,6 +17,7 @@ export default function Home({ data }) {
         </Helmet>
       </div>
       <NavBar />
+      <About />
       <div className="blogPosts">
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
