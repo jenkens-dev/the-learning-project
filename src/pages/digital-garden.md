@@ -1,0 +1,13 @@
+---
+title: "What is a digital garden?"
+date: "2020-06-12"
+status: 🌻
+---
+
+<img src="../../images/plantSeedlings.jpeg" alt="Plant Seedling" />
+
+A digital garden is a new way of writing and creating content. I always wanted to create my blog and talk about everything I'm learning and showcase my progress as a developer. Flatiron requires all their students to write blogs and this was the perfect chance, I wrote quite a few blogs on [dev.to](https://dev.to/talia) and some even got some recognition! Post-graduation I started getting more anxiety out posting blogs and agonizing over their correctness and my general writing skills. Suddenly blogs became less fun and more of a way to market myself for my job search. I whole-heartedly agree with what [Joel Hooks](https://joelhooks.com/on-writing-more) said:
+
+> _Everybody is treating writing as a "content marketing strategy" and using it to "build a personal brand" which leads to the fundamental flawed idea that everything you post has to be polished to perfection and ready to be consumed._
+
+In order to escape this need for perfection and get back to writing and exploring for fun, enter the digital garden! I first learned about digital gardens from [Joel Hooks](https://joelhooks.com/digital-garden) and [swyx](https://www.swyx.io/writing/digital-garden-tos/). Digital gardens focus on the process of creating content and constantly updating and curating as you learn and grow. Like real gardens each post is at a different stage. They're either finished (🌻), or in progress (🌱) and are being pruned and updated as I learn more. Even as I'm writing this post I feel a lot less pressure and it feels more like a conversation. I hope people are encouraged to start their own garden and release more thoughts and notes into the world. We hold ourselves to their high standards of perfection and I much rather be focusing on growing and learning. I want this garden to be a place where I can learn. Expect some mistakes, ramblings, and imcomplete articles as you peruse the garden. If you'd like to help me learning by correcting a mistake or sharig some of your knowledge on a subject feel free to reach out to me on [Twitter](https://twitter.com/jenkens_)!

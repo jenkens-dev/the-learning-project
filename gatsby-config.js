@@ -11,6 +11,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

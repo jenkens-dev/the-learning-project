@@ -9,13 +9,8 @@ export default function About() {
         garden is a place where I can take notes, share my thoughts about things
         I'm learning, and document my programming progress. The articles here
         are either finished (🌻), or in progress (🌱) and are being pruned and
-        updated as I learn more.
-      </p>
-      <p>
-        Everybody is treating writing as a "content marketing strategy" and
-        using it to "build a personal brand" which leads to the fundamental
-        flawed idea that everything you post has to be polished to perfection
-        and ready to be consumed.
+        updated as I learn more. To read more about digital gardens check out my{" "}
+        <a href="/digital-garden/">article</a>!
       </p>
     </div>
   )
