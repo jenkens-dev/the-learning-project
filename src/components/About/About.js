@@ -1,9 +1,10 @@
 import React from "react"
+import "./About.scss"
 
 export default function About() {
   return (
-    <div>
-      <p>Hello and welcome to my digital garden! 👩‍🌾</p>
+    <div className="aboutSection">
+      <p className="firstLine">Hello and welcome to my digital garden! 👩‍🌾</p>
       <p>
         My name is Jen Kennedy and I'm a Full-Stack developer. This digital
         garden is a place where I can take notes, share my thoughts about things

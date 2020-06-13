@@ -4,7 +4,7 @@ date: "2020-06-12"
 status: 🌻
 ---
 
-<img src="../../images/plantSeedlings.jpeg" alt="Plant Seedling" />
+<img src="/plantSeedlings.jpeg" alt="Plant Seedlings" />
 
 A digital garden is a new way of writing and creating content. I always wanted to create my blog and talk about everything I'm learning and showcase my progress as a developer. Flatiron requires all their students to write blogs and this was the perfect chance, I wrote quite a few blogs on [dev.to](https://dev.to/talia) and some even got some recognition! Post-graduation I started getting more anxiety out posting blogs and agonizing over their correctness and my general writing skills. Suddenly blogs became less fun and more of a way to market myself for my job search. I whole-heartedly agree with what [Joel Hooks](https://joelhooks.com/on-writing-more) said:
 
