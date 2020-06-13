@@ -12,7 +12,7 @@ export default function NavBar() {
         </li>
         <div className="secondMenu">
           <li className="item navItem">
-            <a>All Posts</a>
+            <a href="/articles">All Posts</a>
           </li>
           <IconContext.Provider value={{ className: "icon navItem" }}>
             <a href="https://github.com/Taljjaa">

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../index.scss"
 import NavBar from "../components/NavBar/NavBar"
@@ -18,18 +18,19 @@ export default function Home({ data }) {
       </div>
       <NavBar />
       <About />
-      <div className="blogPosts">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3 className="blogPostTitle">
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-                <span>: {node.frontmatter.status}</span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
+      <div className="favoriteBlogs">
+        <h3>My favorite posts</h3>
+        <ul>
+          <a href="/beginners-guide-to-react-redux/">
+            <li>Beginner's Guide to React Redux</li>
+          </a>
+          <a href="/react-redux-with-hooks/">
+            <li>React Redux with Hooks</li>
+          </a>
+          <a href="/what-is-graphql/">
+            <li>What is GraphQL?</li>
+          </a>
+        </ul>
       </div>
     </div>
   )

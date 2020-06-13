@@ -10,13 +10,33 @@ html {
     max-width: 880px;
     margin: 0 auto;
 
+    .searchBox {
+      all: unset;
+      font-size: 1em;
+      margin: 10px auto;
+      border-radius: 4px;
+      background-color: white;
+      border: 2px solid #05386b;
+      padding: 2px 5px;
+    }
+
     .blogPostTitle {
       font-family: "Roboto", sans-serif;
       color: #05386b;
     }
   }
+
+  .favoriteBlogs {
+    max-width: 880px;
+    margin: 0 auto;
+  }
 }
 a {
   text-decoration: none;
   color: #edf5e1;
+}
+
+h3 {
+  color: #05386b;
+  margin: 5px;
 }
