@@ -15,8 +15,18 @@ html {
       color: #05386b;
     }
   }
+
+  .favoriteBlogs {
+    max-width: 880px;
+    margin: 0 auto;
+  }
 }
 a {
   text-decoration: none;
   color: #edf5e1;
+}
+
+h3 {
+  color: #05386b;
+  margin: 5px;
 }
