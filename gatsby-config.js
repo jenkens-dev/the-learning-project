@@ -24,7 +24,7 @@ module.exports = {
         background_color: "#5cdb95",
         theme_color: "#6b37bf",
         display: "standalone",
-        icon: "src/images/icon.png",
+        icon: "static/favicon.ico",
         crossOrigin: `use-credentials`,
       },
     },
