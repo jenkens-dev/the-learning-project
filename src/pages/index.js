@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../index.scss"
 import NavBar from "../components/NavBar/NavBar"
