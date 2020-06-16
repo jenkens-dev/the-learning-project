@@ -19,7 +19,7 @@ export default function About() {
         <span role="img" aria-label="sunflower">
           🌻
         </span>
-        , or in progress (
+        ), or in progress (
         <span role="img" aria-label="seedling">
           🌱
         </span>
