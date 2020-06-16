@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `The Learning Project`,
+    title: "The Learning Project",
+    description: "My digital garden, a place I share my knowledge and growth",
+    url: "https://the-learning-project.netlify.app",
+    image: "/favicon.ico",
+    twitterUsername: "@jenkens_",
   },
   plugins: [
     {
