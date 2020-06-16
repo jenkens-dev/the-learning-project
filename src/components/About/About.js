@@ -1,5 +1,6 @@
 import React from "react"
 import "./About.scss"
+import { Link } from "gatsby"
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
         I'm learning, and document my programming progress. The articles here
         are either finished (🌻), or in progress (🌱) and are being pruned and
         updated as I learn more. To read more about digital gardens check out my{" "}
-        <a href="/digital-garden/">article</a>!
+        <Link to="/digital-garden">article</Link>!
       </p>
     </div>
   )
