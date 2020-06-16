@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import NavBar from "../components/NavBar/NavBar"
+import Layout from "../components/Layout"
 
 export default function Articles({ data }) {
   const [search, setSearch] = useState("")
@@ -15,8 +15,7 @@ export default function Articles({ data }) {
       return node.frontmatter.title.toLowerCase().includes(search.toLowerCase())
     })
     return (
-      <div>
-        <NavBar />
+      <Layout>
         <div className="blogPosts">
           <input
             className="searchBox"
@@ -38,13 +37,12 @@ export default function Articles({ data }) {
             </div>
           ))}
         </div>
-      </div>
+      </Layout>
     )
   }
 
   return (
-    <div>
-      <NavBar />
+    <Layout>
       <div className="blogPosts">
         <input
           className="searchBox"
@@ -65,7 +63,7 @@ export default function Articles({ data }) {
           </div>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 }
 

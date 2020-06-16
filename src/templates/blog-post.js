@@ -1,18 +1,20 @@
 import React from "react"
-import NavBar from "../components/NavBar/NavBar"
+import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import "./blogPost.scss"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
-    <>
-      <NavBar />
+    <Layout>
       <div className="blogPost">
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} className="blogPostContent"/>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          className="blogPostContent"
+        />
       </div>
-    </>
+    </Layout>
   )
 }
 

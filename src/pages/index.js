@@ -2,14 +2,13 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../index.scss"
-import NavBar from "../components/NavBar/NavBar"
 import About from "../components/About/About"
+import Layout from "../components/Layout"
 
 export default function Home({ data }) {
   console.log(data)
   return (
-    <div>
-      <NavBar />
+    <Layout>
       <About />
       <div className="favoriteBlogs">
         <h3>My favorite posts</h3>
@@ -25,7 +24,7 @@ export default function Home({ data }) {
           </Link>
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 
