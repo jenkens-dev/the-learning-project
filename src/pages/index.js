@@ -14,7 +14,7 @@ export default function Home({ data }) {
       <div className="favoriteBlogs">
         <h3>My favorite posts</h3>
         <ul>
-          <Link to="/beginners-guide-to-react-redux/">
+          <Link to="/articles/beginners-guide-to-react-redux/">
             <li>Beginner's Guide to React Redux</li>
           </Link>
           <Link to="/react-redux-with-hooks/">
