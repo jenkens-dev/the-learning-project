@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Helmet } from "react-helmet"
 import "../index.scss"
 import About from "../components/About/About"
 import Layout from "../components/Layout"
 
 export default function Home({ data }) {
-  console.log(data)
   return (
     <Layout>
       <About />
@@ -16,10 +14,10 @@ export default function Home({ data }) {
           <Link to="/articles/beginners-guide-to-react-redux/">
             <li>Beginner's Guide to React Redux</li>
           </Link>
-          <Link to="/react-redux-with-hooks/">
+          <Link to="/articles/react-redux-with-hooks/">
             <li>React Redux with Hooks</li>
           </Link>
-          <Link to="/what-is-graphql/">
+          <Link to="/articles/what-is-graphql/">
             <li>What is GraphQL?</li>
           </Link>
         </ul>

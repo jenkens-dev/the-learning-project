@@ -52,7 +52,7 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
-        defaultDescription: description
+        defaultDescript: description
         siteUrl: url
         defaultImage: image
         twitterUsername
