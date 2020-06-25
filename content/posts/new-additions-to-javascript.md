@@ -1,0 +1,83 @@
+---
+title: "New Additions to JavaScript"
+date: "2020-01-03"
+status: 🌻
+---
+
+The language of JavaScript is constantly being updated. Any new ideas or features that want to be added to the language are brought to the TC39 committee. TC39 is responsible for creating, approving, or denying proposals, and it is made up of delegates. ECMA which oversees TC39 standardizes the language specifications. 
+
+When someone submits a proposal it starts at stage 0. Once a proposal reaches stage 4 it is ready to be included in the official specifications. 
+
+#Array.prototype.flat
+This method is very useful and allows you to flatten a nested array. If the array is deeper just calling flat() once will not fully flatten the array. You can pass flat() a number to tell it how deep to flatten
+
+```javascript
+const array = [1,2,[3,4]];
+array.flat() // [1,2,3,4]; =)
+
+const nestedArray = [1,2,[[3,4],5, [6,[7,8]]]];
+nestedArray.flat(Infinity) // [1,2,3,4,5,6,7,8]; typeof Infinity is number
+```
+
+#Nullish Coalescing
+
+Often we want to provide a default value when accessing properties on an object. We can't depend on the value always being there so to combat this we used the or operator.
+
+```javascript
+const myObj = {
+  favoriteAnimal: '',
+  age: 0,
+  nullValue: null
+}
+
+const undefinedValue = myObj.favoriteFood || 'Pizza'; // 'Pizza'
+const nullValue = myObj.nullValue || 'some default'; // 'some default'
+```
+This works well for null and undefined values, we can assign them to default values with a little extra work. Unfortunately JavaScript falsy values can produce some unexpected results.
+
+```javascript 
+const age = myObj.age || 111; // 111 because 0 is falsy
+const favoriteAnimal = myObj.favoriteAnimal || 'Seagull' // 'Seagull' because '' is also a falsy value
+```
+
+This is where nullish coalescing comes in. Written as ?? it performs a similar job to || but with one major difference. If the value on the left-hand side of the ?? operator is null or undefined only then will the right-hand side be used!
+
+```javascript
+//works in the same way with null and undefined values
+const undefinedValue = myObj.favoriteFood ?? 'Pizza'; // 'Pizza'
+const nullValue = myObj.nullValue ?? 'some default'; // 'some default'
+
+const age = myObj.age ?? 111; // 0!
+const favoriteAnimal = myObj.favoriteAnimal ?? 'Seagull' // ''
+//because the values on the left-hand side were not null or undefined the right-hand side is ignored!
+
+```
+
+#Optional Chaining
+
+When working with APIs or deeply nested objects we often have to check multiple levels of the object before we can access the property we are looking for. This process is tedious and can quickly get repetitive. 
+
+```javascript
+const myObj = {
+  favoriteThings: {
+   anime: ["Dragon Ball"]
+  }
+}
+
+const anime = myObj.favoriteThing.anime //This works if favoriteThings exists but if it is undefined we will get an error
+const anime = myObj.favoriteThing ? myObj.favoriteThing.anime : undefined //works but very tedious
+```
+
+Enter optional chaining which is written as ?. 
+```javascript
+const anime = myObj.favoriteThings?.anime
+```
+Optional chaining will not throw an error and will instead evaluate the expression to undefined! Optional chaining gets even more powerful when used with nullish coalescing. 
+
+```javascript
+const bad = myObj.badThings?.insects ?? 'Mosquitos' //Because myObj.badThings evaluates to undefined nullish coalescing will return the right-hand side 'Mosquitos'
+```
+ 
+Optional chaining can be used multiple times in a single expression for deeply nested objects or potentially null objects. It is also not confined to just objects, you can use optional chaining on arrays and function calls! 
+
+To stay up to date with other potential changes coming to JavaScript, I encourage you to follow TC39 on [github](https://github.com/tc39). There you can find meeting notes and any active or inactive proposals. 

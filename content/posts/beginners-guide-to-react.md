@@ -1,0 +1,70 @@
+---
+title: "Beginner's Guide to React"
+date: "2019-11-26"
+status: 🌻
+---
+
+React is a JavaScript library, created by Facebook and open-sourced in 2013. React was created to help build simple and reusable interfaces. The main idea was to divide the UI into small individual components. These individual and reusable components are the core feature of React. The important pieces to understand about React are Components, JSX, State, and Props.
+
+## Components
+
+React interfaces are made up of small components that all have just one purpose. These components are translated into HTML and then added onto the DOM to be rendered. React components come in two different styles, class-based components, and functional components.
+
+```javascript
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello</h1>
+  }
+}
+```
+
+The main difference between the two is Class components can hold state (note this was changed with the addition of [React Hooks](https://dev.to/talia/react-hooks-1nme), check out my other post to learn about hooks). Although we will talk about state later, think of it as a parameter. State allows your components to be dynamic and flexible. Functional components cannot hold their own state. What Functional components do well is their simpleness and readability.
+
+```javascript
+function Welcome() {
+  return <h1>Hello</h1>
+}
+```
+
+## JSX
+
+JSX is an extension of JavaScript that is used to tell React what the UI will look like. Although it looks like HTML, JSX allows us to create what the UI and logic should look like in one place. By using JSX we can embed JavaScript logic right into our UI. JSX is similar to Ruby's ERB, we can use them to create a layout with variable flexibility.
+
+```javascript
+const name = "Jen"
+const element = <h1>My name is {name}</h1>
+```
+
+## State
+
+State is an object that is tied to a Class component. It can be initialized or changed through user input or APIs. State is held by a parent component and can be passed to its children through props. This Unidirectional Flow is a key feature of React. A component's state must be stored high enough in the component hierarchy to pass it to all its children, without having to pass it through unnecessary components. State can only be passed down and not laterally to sibling components. Whenever a components' state is altered, the component, as well as all its children, will update and reflect this new state.
+
+```javascript
+class FetchData extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoading: false,
+    }
+  }
+}
+```
+
+## Props
+
+Props are objects given to components by their parents. Props are passed to create dynamic components. We won't always want to render static data, and that's where props come in. Props are passed to different components because the main goal of React is to create small pure components. Sure we could create a large class component with state and have it render every piece of the UI, but this would be hard to read and hard to reuse. If we ever wanted to render just a small piece on a different page, we would need to render the whole large component again!
+
+```javascript
+const KanjiData = props => {
+  return (
+    <div>
+      <p>Character: {props.character}</p>
+      <p>Meaning: {props.meaning}</p>
+      <p>Kunyomi Reading: {props.kunyomi}</p>
+      <p>Onyomi Reading: {props.onyomi}</p>
+    </div>
+  )
+}
+```
+
+Remember a library is just a tool to help make developers' lives easier. If you find yourself wanting to learn more React I highly encourage you to take a look at the [React Docs](https://reactjs.org/docs/getting-started.html), they are my favorite resource or look through the small [Kanji App](https://github.com/Taljjaa/Random-Kanji-App) I made. Everything you do in React can be done with vanilla JavaScript. React and other JavaScript libraries like Angular, Vue, and Ember are be no means required tools.
