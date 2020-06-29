@@ -4,14 +4,19 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
+import CodeBlock from "../components/CodeBlock"
 
-const shortcodes = { Link }
+const shortcodes = { Link, CodeBlock }
+
+const components = {
+  code: CodeBlock,
+}
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
       <h1>{mdx.frontmatter.title}</h1>
-      <MDXProvider components={shortcodes}>
+      <MDXProvider components={components}>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
     </Layout>
