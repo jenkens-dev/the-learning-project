@@ -10,7 +10,7 @@ Connecting your app to the Redux store still follows the same process with hooks
 
 Before hooks if we wanted a component to have access to the store we needed to use the connect higher-order component.
 
-```javascript
+```jsx
 import { connect } from "react-redux"
 
 export default connect()(Animes)
@@ -18,7 +18,7 @@ export default connect()(Animes)
 
 Now our Animes component has access to the store and if we wanted state or the ability to change the state we would have to mapStateToProps and mapDispatchToProps
 
-```javascript
+```jsx
 import { increaseVote, decreaseVote } from "../actions"
 import { connect } from "react-redux"
 
@@ -40,7 +40,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(AnimeCard)
 
 For me, it was pretty easy to mess up these lines or even forget to add them in the first place! Compare the above non-hooks version to the hooks version below.
 
-```javascript
+```jsx
 import { useSelector, useDispatch } from "react-redux"
 import { INCREASE_VOTE as increaseVote } from "../actions"
 
@@ -53,7 +53,7 @@ We can use the useSelector hook to access the state of the store, instead of map
 
 No-Hooks
 
-```javascript
+```jsx
 import React from "react"
 import { increaseVote, decreaseVote } from "../actions"
 import { connect } from "react-redux"
@@ -102,7 +102,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(AnimeCard)
 
 With Hooks
 
-```javascript
+```jsx
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { increaseVote, decreaseVote } from "../actions"

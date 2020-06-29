@@ -8,7 +8,7 @@ React hooks were added to React in February 2019. One of their main features is 
 
 ##useState Hook
 
-```javascript
+```jsx
 const Theme = () => {
   const [theme, setTheme] = React.useState("light")
   const toDark = () => setTheme("dark")
@@ -27,7 +27,7 @@ const Theme = () => {
 
 The useState hook allows us to add state to a functional component, and it's one of the first hooks I suggest using. The useState hook can be initialized with a starting value and it returns two values. The first is equivalent to the initial state you're used to setting up with this.state. The second value is a function that can be used to update the state, similar to this.setState. We can assign these two values to whatever variable names we want with array destructuring.
 
-```javascript
+```jsx
 const [theme, setTheme] = React.useState("light")
 ```
 
@@ -37,7 +37,7 @@ Now we have our state set in the variable theme and we can update our state with
 
 The useEffect is important for controlling the side effects of your component. A side effect is anything that interacts with the outside world or outside its scope. This includes fetching data, changing the DOM, and making network requests. These effects were normally done with class components and lifecycle methods before hooks. useEffect runs every time a component renders, because of this if you re-render within useEffect you will cause an infinite loop. In order to prevent this, useEffect takes an optional second parameter.
 
-```javascript
+```jsx
 React.useEffect(() => {
   // will be invoked on the initial render and every subsequent re-render
 })
@@ -53,7 +53,7 @@ React.useEffect(() => {
 
 Through the power of the useEffect and useState hooks we can write functional components with all the power that is normally reserved for class components.
 
-```javascript
+```jsx
 useEffect(() => {
   fetch(
     `https://bookclub-builder-server.herokuapp.com/api/v1/bookclubs/${match.params.id}`
