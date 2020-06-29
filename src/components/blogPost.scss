@@ -1,3 +1,13 @@
+.title {
+  color: #05386b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
 .blogPost {
   display: flex;
   flex-direction: column;
@@ -6,10 +16,6 @@
   max-width: 880px;
   margin: 0 auto;
   color: #edf5e1;
-
-  h1 {
-    color: #05386b;
-  }
 
   h2 {
     color: #05386b;
