@@ -10,12 +10,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        name: `posts`,
+        path: `${__dirname}/content/posts/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

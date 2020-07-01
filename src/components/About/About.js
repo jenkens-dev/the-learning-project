@@ -25,7 +25,7 @@ export default function About() {
         </span>
         ) and are being pruned and updated as I learn more. To read more about
         digital gardens check out my{" "}
-        <Link to="/articles/digital-garden">article</Link>!
+        <Link to="/blog/digital-garden">article</Link>!
       </p>
     </div>
   )
