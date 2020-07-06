@@ -13,12 +13,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 880px;
+  max-width: 85%;
   margin: 0 auto;
   color: #edf5e1;
 
   h2 {
     color: #05386b;
+  }
+
+  main {
+    width: 85%;
+
+    pre {
+      overflow: auto;
+    }
   }
 
   .blogPostContent {
