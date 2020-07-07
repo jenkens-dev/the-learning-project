@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 880px;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 85%;
+  max-width: 80%;
   margin: 0 auto;
   color: #edf5e1;
 
@@ -22,7 +22,11 @@
   }
 
   main {
-    width: 85%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     pre {
       overflow: auto;
