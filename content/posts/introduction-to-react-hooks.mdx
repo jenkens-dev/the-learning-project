@@ -6,7 +6,7 @@ status: 🌻
 
 React hooks were added to React in February 2019. One of their main features is they give us a way to use state without having to define a class component. Our functional components can now have features that were specific to class components like state and lifecycles. Without large class components in our code, it is easier and cleaner to read. Using hooks helps simplify state management and component layouts. Hooks are completely optional and backward-compatible. This means that all our working knowledge of React isn’t obsolete, but can be grown and updated. Hooks were proposed to solve some of React’s problems like sharing state, components becoming unwieldy as they grew more complex, and confusing class syntax.
 
-##useState Hook
+## useState Hook
 
 ```jsx
 const Theme = () => {
@@ -33,7 +33,7 @@ const [theme, setTheme] = React.useState("light")
 
 Now we have our state set in the variable theme and we can update our state with the setTheme function. The useState hook can be used multiple times in the same component and should be used for every state value you want to keep track of. An important aspect of the useState hook is its ability to preserve values between re-renders. Normally any values within a function will be re-initialized when the function is called. But when a functional component with the useState hook re-renders, React knows that the useState hook has already been invoked and it will remember the previous value of the state.
 
-##useEffect Hook
+## useEffect Hook
 
 The useEffect is important for controlling the side effects of your component. A side effect is anything that interacts with the outside world or outside its scope. This includes fetching data, changing the DOM, and making network requests. These effects were normally done with class components and lifecycle methods before hooks. useEffect runs every time a component renders, because of this if you re-render within useEffect you will cause an infinite loop. In order to prevent this, useEffect takes an optional second parameter.
 
@@ -73,7 +73,7 @@ Above is an example of a useEffect hook I used in my final project at Flatiron. 
 
 I hope you've enjoyed this beginner introduction to hooks! There's still a lot of cool things out there to learn and I hope this gets you on the right path.
 
-Favorite Resources:
+### Favorite Resources:
 
 - [React Docs](https://reactjs.org/docs/hooks-intro.html)
 - [React Hooks Tutorial for Beginners by Valentino Gagliardi](https://www.valentinog.com/blog/hooks/)

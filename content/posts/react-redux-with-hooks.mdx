@@ -51,7 +51,7 @@ const animes = useSelector(state => state.animes)
 
 We can use the useSelector hook to access the state of the store, instead of mapStateToProps. useSelector takes the current state of the store as a parameter and returns a piece of state you want. A potential hurdle with useSelector is that it uses strict equality, different from the previous mapStateToProps, which checked if the fields changed. This can cause potential problems when trying to return an object from useSelector, so it's best practice to call useSelector once for each value of your state. Instead of using mapDispatchToProps we can use the useDispatch hook and individually dispatch any actions we need to the reducer. To get the overall picture of hooks versus non-hooks here is the same component written in both ways.
 
-No-Hooks
+## No-Hooks
 
 ```jsx
 import React from "react"
@@ -100,7 +100,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(AnimeCard)
 ```
 
-With Hooks
+## With Hooks
 
 ```jsx
 import React from "react"
@@ -140,7 +140,7 @@ export default AnimeCard
 
 Not only did we save about 10 lines of code, personally I think it became a lot easier to read and write. And because we aren’t using the connect higher-order component anymore our render tree is much cleaner. I hope you enjoyed this blog post and are thinking about using Redux with hooks in one of your upcoming projects. Feel free to comment with any questions!
 
-Favorite Resources:
+### Favorite Resources:
 
 - React-Redux [docs](https://react-redux.js.org/api/hooks)
 - Using Redux with React Hooks [article](https://thoughtbot.com/blog/using-redux-with-react-hooks)
