@@ -20,8 +20,8 @@ export default function About() {
           🌻
         </span>
         ), or in progress (
-        <span role="img" aria-label="seedling">
-          🌱
+        <span role="img" aria-label="farmer">
+          👩‍🌾
         </span>
         ) and are being pruned and updated as I learn more. To read more about
         digital gardens check out my{" "}
