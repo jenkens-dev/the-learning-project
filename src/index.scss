@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Roboto&display=swap");
 
 html {
-  background-color: #32aa6c;
+  background-color: #3bc77f;
   margin: 0 auto;
   font-family: "Barlow", sans-serif;
   font-size: 1.25em;
@@ -16,8 +16,13 @@ html {
       margin: 10px auto;
       border-radius: 4px;
       background-color: #ffffff;
+      color: #000000;
       border: 2px solid #05386b;
       padding: 2px 5px;
+    }
+
+    ::placeholder {
+      color: #000;
     }
 
     .blogPostTitle {
@@ -35,7 +40,7 @@ html {
 a {
   font-size: 1.15em;
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 h3 {
