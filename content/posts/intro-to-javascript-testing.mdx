@@ -1,0 +1,14 @@
+---
+title: "Introduction to JavaScript Testing"
+date: "2020-09-23"
+status: 👩‍🌾
+---
+
+Writing tests for my new job has been a big struggle for me recently. It feels like when I first got started programming, I knew what I wanted to do but I couldn't tell the computer how to get it done. My work uses Jest and Enzyme, but for my side project PlayItForward I'll be using [Jest](https://jestjs.io/docs/en/getting-started.html) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). Luckily Kent C. Dodds has a great course to learn all about [Testing JavaScript](https://testingjavascript.com/). Here you'll find my notes and thoughts on the course: 
+
+- Most fundamental form of a test is determining if the result is equal to the expected value, if it doesn't match the test should throw an error 
+
+ESLint can be used for static testing to help give you confidence in your application without having to setup a bunch of tests. 
+TypeScript can also give you a bit some static testing as well to help with type checking and small typos 
+
+After mocking you need to clean up to ensure you don't affect the next test that may not want to mock or wants to mock in a different way
