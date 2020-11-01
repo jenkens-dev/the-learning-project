@@ -1,3 +1,5 @@
+@import "../../variables";
+
 nav {
   max-width: 90%;
   margin: 0 auto;
@@ -5,7 +7,7 @@ nav {
     margin: 10px;
   }
   a {
-    color: #05386b;
+    color: $blue-200;
     font-size: 1.25rem;
   }
   ul {
@@ -15,7 +17,7 @@ nav {
     justify-content: space-between;
   }
   .icon {
-    color: #05386b;
+    color: $blue-200;
     height: 1.25rem;
     width: 1.25rem;
     margin-top: 12px;

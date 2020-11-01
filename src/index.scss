@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Roboto&display=swap");
+@import "variables";
 
 html {
-  background-color: #3bc77f;
+  background-color: $green-800;
   margin: 0 auto;
   font-family: "Barlow", sans-serif;
   font-size: 1.25em;
@@ -17,7 +18,7 @@ html {
       border-radius: 4px;
       background-color: #ffffff;
       color: #000000;
-      border: 2px solid #05386b;
+      border: 2px solid $blue-200;
       padding: 2px 5px;
     }
 
@@ -27,7 +28,7 @@ html {
 
     .blogPostTitle {
       font-family: "Roboto", sans-serif;
-      color: #05386b;
+      color: $blue-200;
     }
   }
 
@@ -38,12 +39,11 @@ html {
 }
 
 a {
-  font-size: 1.15em;
   text-decoration: none;
   color: #000000;
 }
 
 h3 {
-  color: #05386b;
+  color: $blue-300;
   margin: 5px;
 }

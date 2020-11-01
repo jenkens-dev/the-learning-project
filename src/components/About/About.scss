@@ -1,5 +1,7 @@
+@import "../../variables";
+
 a {
-  color: #05386b;
+  color: $blue-300;
 }
 
 .aboutSection {
@@ -7,11 +9,11 @@ a {
   margin: 0 auto;
 
   .firstLine {
-    color: #05386b;
+    color: $blue-300;
     font-size: 1.25em;
   }
 }
 
 p {
-  color: #000000;
+  color: $teal-200;
 }
