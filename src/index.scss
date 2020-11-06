@@ -35,6 +35,13 @@ html {
   .favoriteBlogs {
     max-width: 80%;
     margin: 0 auto;
+
+    ul {
+      display: inline-block;
+      li {
+        width: fit-content;
+      }
+    }
   }
 }
 
