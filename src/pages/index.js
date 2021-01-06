@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import "../index.scss"
 import About from "../components/About/About"
 import Layout from "../components/Layout"
 

@@ -1,11 +1,10 @@
 import React from "react"
-import "./About.scss"
 import { Link } from "gatsby"
 
 export default function About() {
   return (
-    <div className="aboutSection">
-      <h2 className="firstLine">
+    <div>
+      <h2>
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer">
           👩‍🌾

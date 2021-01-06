@@ -4,12 +4,11 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/Layout"
 import CodeBlock from "../components/CodeBlock"
-import "./blogPost.scss"
 
 const components = {
   code: CodeBlock,
   wrapper: props => (
-    <div className="blogPost">
+    <div>
       <main {...props} />
     </div>
   ),
@@ -18,7 +17,7 @@ const components = {
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <h1 className="title">{mdx.frontmatter.title}</h1>
+      <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={components}>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
