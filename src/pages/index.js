@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import About from "../components/About/About"
+import About from "../components/About"
 import Layout from "../components/Layout"
 
 const BlogIndex = () => {

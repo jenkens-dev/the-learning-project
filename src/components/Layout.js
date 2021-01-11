@@ -1,6 +1,7 @@
 import React from "react"
-import NavBar from "./NavBar/NavBar"
+import NavBar from "./NavBar"
 import SEO from "./SEO"
+import Footer from "./Footer"
 
 export default function Layout({ children }) {
   return (
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
       <SEO />
       <NavBar />
       {children}
+      <Footer/>
     </div>
   )
 }
