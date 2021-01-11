@@ -10,7 +10,7 @@ This project is built using [Gatsby](https://www.gatsbyjs.org/)
 ## Setup
 
 - Clone the repo and open the file on your local machine
-- Run ```npm install``` and then ```npm start``` to start the Gatsby server 
+- Run `npm install` and then `npm start` to start the Gatsby server
 
 ## Contributions
 
