@@ -7,6 +7,7 @@ module.exports = {
     twitterUsername: "@jenkens_",
   },
   plugins: [
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
