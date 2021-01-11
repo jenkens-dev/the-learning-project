@@ -8,7 +8,7 @@ export default function NavBar() {
       <div>
         <Link to="/">Home</Link>
       </div>
-      <div className="flex">
+      <div className="flex items-center">
         <DarkModeToggle />
         <Link to="/articles">All Posts</Link>
       </div>
