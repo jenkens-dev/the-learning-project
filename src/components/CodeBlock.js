@@ -15,7 +15,6 @@ const CodeBlock = ({
       code={children.trim()}
       language={language}
       theme={theme}
-      className="potato"
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre

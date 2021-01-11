@@ -16,9 +16,8 @@ export default function Articles({ data }) {
     })
     return (
       <Layout>
-        <div className="blogPosts">
+        <div>
           <input
-            className="searchBox"
             type="text"
             placeholder="Filter articles"
             value={search}
@@ -27,7 +26,7 @@ export default function Articles({ data }) {
           {filteredData.map(({ node }) => (
             <div key={node.id}>
               <Link to={node.fields.slug}>
-                <h3 className="blogPostTitle">
+                <h3>
                   {node.frontmatter.title}{" "}
                   <span>— {node.frontmatter.date}</span>
                   <span>: {node.frontmatter.status}</span>
@@ -43,9 +42,8 @@ export default function Articles({ data }) {
 
   return (
     <Layout>
-      <div className="blogPosts">
+      <div>
         <input
-          className="searchBox"
           type="text"
           placeholder="Filter articles"
           value={search}
@@ -54,7 +52,7 @@ export default function Articles({ data }) {
         {data.allMdx.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={node.fields.slug}>
-              <h3 className="blogPostTitle">
+              <h3>
                 {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
                 <span>: {node.frontmatter.status}</span>
               </h3>
