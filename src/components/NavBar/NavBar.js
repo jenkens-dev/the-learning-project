@@ -14,7 +14,7 @@ export default function NavBar() {
           <li>
             <Link to="/articles">All Posts</Link>
           </li>
-          <IconContext.Provider value={{ className: "icon navItem" }}>
+          <IconContext.Provider>
             <a href="https://github.com/Taljjaa">
               <AiFillGithub />
             </a>
