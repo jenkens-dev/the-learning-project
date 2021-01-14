@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 export default function NavBar() {
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="flex items-center justify-between py-6">
       <div>
         <Link to="/">Home</Link>
       </div>
