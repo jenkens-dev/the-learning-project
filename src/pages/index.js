@@ -9,7 +9,7 @@ const BlogIndex = () => {
       <About />
       <div>
         <h3>My favorite posts</h3>
-        <ul>
+        <ul className="inline-block">
           <Link to="/blog/beginners-guide-to-react-redux/">
             <li>Beginner's Guide to React Redux</li>
           </Link>
