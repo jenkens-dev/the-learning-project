@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function About() {
   return (
-    <div>
+    <>
       <p className="mb-5">
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer">
@@ -36,6 +36,6 @@ export default function About() {
         digital gardens check out my{" "}
         <Link to="/blog/digital-garden">article</Link>!
       </p>
-    </div>
+    </>
   )
 }

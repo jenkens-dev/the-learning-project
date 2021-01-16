@@ -5,10 +5,10 @@ import Footer from "./Footer"
 
 export default function Layout({ children }) {
   return (
-    <div className="my-0 mx-auto max-w-5xl">
+    <div className="h-screen flex flex-col my-0 mx-auto max-w-5xl">
       <SEO />
       <NavBar />
-      {children}
+      <div className="flex-grow">{children}</div>
       <Footer />
     </div>
   )
