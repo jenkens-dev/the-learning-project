@@ -1,6 +1,6 @@
 # Jen's Digital Garden
 
-This project is built using [Gatsby](https://www.gatsbyjs.org/)
+This project is built using [Gatsby](https://www.gatsbyjs.org/) and [Tailwind CSS](https://tailwindcss.com/)
 
 ## Features
 
