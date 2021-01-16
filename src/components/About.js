@@ -4,13 +4,13 @@ import { Link } from "gatsby"
 export default function About() {
   return (
     <div>
-      <h2>
+      <p className="mb-5">
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer">
           👩‍🌾
         </span>
-      </h2>
-      <p>
+      </p>
+      <p className="mb-5">
         My name is Jen Kennedy and I'm a frontend developer. I currently live in
         Seattle, WA 🌲! I love frontend development and enjoy working on
         products and making designs and features come to life. Some of my
@@ -21,7 +21,7 @@ export default function About() {
         article about my{" "}
         <Link to="/blog/my-journey-into-tech">journey into tech</Link>.
       </p>
-      <p>
+      <p className="mb-5">
         This digital garden is a place where I can take notes, share what I'm
         learning, and document my programming progress. The articles here are
         either finished (
