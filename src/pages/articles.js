@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
+import ArticleBlurb from "../components/ArticleBlurb"
 
 export default function Articles({ data }) {
   const [search, setSearch] = useState("")
@@ -24,16 +25,7 @@ export default function Articles({ data }) {
             onChange={handleChange}
           />
           {filteredData.map(({ node }) => (
-            <div key={node.id}>
-              <Link to={node.fields.slug}>
-                <h3>
-                  {node.frontmatter.title}{" "}
-                  <span>— {node.frontmatter.date}</span>
-                  <span>: {node.frontmatter.status}</span>
-                </h3>
-                <p>{node.excerpt}</p>
-              </Link>
-            </div>
+            <ArticleBlurb node={node} />
           ))}
         </div>
       </Layout>
@@ -50,15 +42,7 @@ export default function Articles({ data }) {
           onChange={handleChange}
         />
         {data.allMdx.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3>
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-                <span>: {node.frontmatter.status}</span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
+          <ArticleBlurb node={node} />
         ))}
       </div>
     </Layout>
