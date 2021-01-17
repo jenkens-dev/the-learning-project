@@ -7,7 +7,6 @@ module.exports = {
     twitterUsername: "@jenkens_",
   },
   plugins: [
-    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,6 +20,7 @@ module.exports = {
         extensions: [`.md`, `.mdx`],
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
