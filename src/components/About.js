@@ -4,12 +4,12 @@ import { Link } from "gatsby"
 export default function About() {
   return (
     <>
-      <p className="mb-5">
+      <h1 className="mb-5">
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer">
           👩‍🌾
         </span>
-      </p>
+      </h1>
       <p className="mb-5">
         My name is Jen Kennedy and I'm a frontend developer. I currently live in
         Seattle, WA 🌲! I love frontend development and enjoy working on
