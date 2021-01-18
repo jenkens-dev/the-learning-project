@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function ArticleBlurb({ node }) {
   return (
-    <div key={node.id}>
+    <div className="my-4" key={node.id}>
       <Link to={node.fields.slug}>
         <div className="flex items-center">
           <h3 className="text-lg font-semibold">{node.frontmatter.title}</h3>
@@ -13,7 +13,7 @@ export default function ArticleBlurb({ node }) {
           </span>
           <span>: {node.frontmatter.status}</span>
         </div>
-        <p className="p-2">{node.excerpt}</p>
+        <p>{node.excerpt}</p>
       </Link>
     </div>
   )
