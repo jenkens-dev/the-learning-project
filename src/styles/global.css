@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 @layer components {
+  /* Links */
   .markdown a {
     @apply text-blue-600;
   }
   .markdown a:hover {
     @apply underline;
   }
+
   /* Paragraph */
   .markdown p {
     @apply mb-4;
   }
+
   /* Lists */
   .markdown ul,
   .markdown ol {
@@ -28,5 +31,10 @@
   }
   .markdown ul {
     @apply list-disc;
+  }
+
+  /* Code Blocks */
+  .markdown pre {
+    @apply my-2;
   }
 }
