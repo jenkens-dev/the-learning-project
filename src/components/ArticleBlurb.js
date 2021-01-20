@@ -13,7 +13,7 @@ export default function ArticleBlurb({ node }) {
           </span>
           <span>: {node.frontmatter.status}</span>
         </div>
-        <p>{node.excerpt}</p>
+        <p className="text-gray-500">{node.excerpt}</p>
       </Link>
     </div>
   )

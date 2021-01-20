@@ -17,10 +17,14 @@ const components = {
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <h1>{mdx.frontmatter.title}</h1>
-      <MDXProvider components={components}>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </MDXProvider>
+      <div className="flex flex-col">
+        <h1 className="text-4xl mb-4 mx-auto">{mdx.frontmatter.title}</h1>
+        <MDXProvider components={components}>
+          <MDXRenderer className="flex flex-col items-center">
+            {mdx.body}
+          </MDXRenderer>
+        </MDXProvider>
+      </div>
     </Layout>
   )
 }
