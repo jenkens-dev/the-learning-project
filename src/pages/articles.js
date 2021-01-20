@@ -24,7 +24,7 @@ export default function Articles({ data }) {
               placeholder="Search articles"
               value={search}
               onChange={handleChange}
-              className="w-full rounded p-2"
+              className="w-full rounded p-2 placeholder-gray-500"
             />
           </div>
           {filteredData.map(({ node }) => (
@@ -44,7 +44,7 @@ export default function Articles({ data }) {
             placeholder="Search articles"
             value={search}
             onChange={handleChange}
-            className="w-full rounded p-2"
+            className="w-full rounded p-2 placeholder-gray-500"
           />
         </div>
         {data.allMdx.edges.map(({ node }) => (
