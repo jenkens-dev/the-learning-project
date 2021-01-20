@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer components {
+  /* Headers */
+  .markdown h1 {
+    @apply text-2xl my-6 font-semibold;
+  }
+  .markdown h2 {
+    @apply text-xl my-6 font-semibold;
+  }
+
   /* Links */
   .markdown a {
     @apply text-blue-600;
