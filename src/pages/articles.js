@@ -18,12 +18,15 @@ export default function Articles({ data }) {
     return (
       <Layout>
         <div>
-          <input
-            type="text"
-            placeholder="Filter articles"
-            value={search}
-            onChange={handleChange}
-          />
+          <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
+            <input
+              type="text"
+              placeholder="Search articles"
+              value={search}
+              onChange={handleChange}
+              className="w-full rounded p-2"
+            />
+          </div>
           {filteredData.map(({ node }) => (
             <ArticleBlurb node={node} />
           ))}
@@ -35,12 +38,15 @@ export default function Articles({ data }) {
   return (
     <Layout>
       <div>
-        <input
-          type="text"
-          placeholder="Filter articles"
-          value={search}
-          onChange={handleChange}
-        />
+        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
+          <input
+            type="text"
+            placeholder="Search articles"
+            value={search}
+            onChange={handleChange}
+            className="w-full rounded p-2"
+          />
+        </div>
         {data.allMdx.edges.map(({ node }) => (
           <ArticleBlurb node={node} />
         ))}
