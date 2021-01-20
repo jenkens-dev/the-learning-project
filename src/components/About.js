@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function About() {
   return (
     <>
-      <h1 className="mb-5">
+      <h1 className="text-3xl mb-5">
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer">
           👩‍🌾
