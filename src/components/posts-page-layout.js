@@ -17,7 +17,7 @@ const components = {
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <div className="flex flex-col">
+      <div className="markdown flex flex-col">
         <h1 className="text-4xl mb-4 mx-auto">{mdx.frontmatter.title}</h1>
         <MDXProvider components={components}>
           <MDXRenderer className="flex flex-col items-center">
