@@ -13,7 +13,7 @@
 
   /* Links */
   .markdown a {
-    @apply text-blue-600;
+    @apply text-green-600;
   }
   .markdown a:hover {
     @apply underline;
@@ -21,7 +21,7 @@
 
   /* Paragraph */
   .markdown p {
-    @apply mb-4;
+    @apply mb-4 text-lg;
   }
 
   /* Lists */
