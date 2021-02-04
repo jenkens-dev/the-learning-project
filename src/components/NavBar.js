@@ -4,13 +4,15 @@ import { Link } from "gatsby"
 
 export default function NavBar() {
   return (
-    <nav className="flex items-center justify-between py-6">
+    <nav className="flex items-center justify-between py-6 text-xl">
       <div>
         <Link to="/">Home</Link>
       </div>
       <div className="flex items-center">
         <DarkModeToggle />
-        <Link to="/articles">All Posts</Link>
+        <Link className="ml-4" to="/articles">
+          All Posts
+        </Link>
       </div>
     </nav>
   )
