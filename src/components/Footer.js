@@ -10,7 +10,9 @@ export default function Footer() {
           <AiFillGithub />
         </a>
       </IconContext.Provider>
-      <IconContext.Provider value={{ className: "w-7 h-7" }}>
+      <IconContext.Provider
+        value={{ className: "w-7 h-7 hover:text-twitterBlue" }}
+      >
         <a href="https://twitter.com/jenkens_">
           <AiOutlineTwitter />
         </a>
