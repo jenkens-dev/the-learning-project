@@ -5,7 +5,9 @@ import { IconContext } from "react-icons"
 export default function Footer() {
   return (
     <div className="flex flex-shrink-0 py-6">
-      <IconContext.Provider value={{ className: "w-7 h-7" }}>
+      <IconContext.Provider
+        value={{ className: "w-7 h-7 hover:text-githubGray" }}
+      >
         <a href="https://github.com/Taljjaa">
           <AiFillGithub />
         </a>

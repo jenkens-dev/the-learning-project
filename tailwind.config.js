@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       textColor: {
         twitterBlue: "#1da0f2",
+        githubGray: "#24292e",
       },
     },
   },
