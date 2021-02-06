@@ -13,7 +13,7 @@ export default function Footer() {
         </a>
       </IconContext.Provider>
       <IconContext.Provider
-        value={{ className: "w-7 h-7 hover:text-twitterBlue" }}
+        value={{ className: "ml-2 w-7 h-7 hover:text-twitterBlue" }}
       >
         <a href="https://twitter.com/jenkens_">
           <AiOutlineTwitter />
