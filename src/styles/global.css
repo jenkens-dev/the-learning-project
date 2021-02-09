@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply min-h-screen;
+  }
+  #___gatsby {
+    @apply min-h-screen;
+  }
+  #gatsby-focus-wrapper {
+    @apply min-h-screen;
+  }
+}
+
 @layer components {
   /* Headers */
   .markdown h1 {
