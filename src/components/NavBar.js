@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 export default function NavBar() {
   return (
-    <nav className="flex items-center justify-between py-6 text-xl">
+    <nav className="flex items-center justify-between pt-2 pb-6 text-xl">
       <div>
         <Link className="text-green-900" to="/">
           Home
