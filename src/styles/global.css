@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  ::selection {
+    background: rgba(6, 78, 59, 1);
+    color: white;
+  }
   body {
     @apply min-h-screen;
   }
@@ -11,6 +15,15 @@
   }
   #gatsby-focus-wrapper {
     @apply min-h-screen;
+  }
+
+  .linkUnderline {
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 78, 59, 1);
+  }
+
+  .linkUnderline:hover {
+    text-decoration-color: rgba(52, 211, 153, 1);
   }
 }
 
@@ -25,10 +38,11 @@
 
   /* Links */
   .markdown a {
-    @apply text-green-600;
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 78, 59, 1);
   }
   .markdown a:hover {
-    @apply underline;
+    text-decoration-color: rgba(52, 211, 153, 1);
   }
 
   /* Paragraph */
