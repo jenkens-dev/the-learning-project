@@ -6,11 +6,11 @@ status: 🌻
 
 Redux is a library used to contain the state of your application in one single location. Redux is language-agnostic and can be used with React, Vue, Angular, or even vanilla JS. I really love using Redux with React. As our React apps become bigger and more complicated the state can get unwieldy and hard to pass around to different components. This is where Redux can help us. It's generally recommended to start with Redux at the beginning of creating your project but it's not impossible to convert a project to using Redux.
 
-We can keep all of the data we need in a store that is separate from our React components. One of the biggest benefits of React is how fast and performant it is, but unnecessary re-renders can slow your project down. One of React’s core features is that whenever a component’s state or props are updated the component will re-render. This tends to slow down our app when we have long component trees and complex state that needs to be passed to multiple children. The general flow of Redux is you send an action to the reducer which then updates the state. Only the components that rely on that state will then be re-rendered, which saves us on performance. The first step to setting up Redux is creating the store.
+We can keep all of the data we need in a store that is separate from our React components. One of the biggest benefits of React is how fast and performant it is, but unnecessary re-renders can slow your project down. One of React’s core features is that whenever a component’s state or props are updated the component will re-render. This tends to slow down our app when we have long component trees and a complex state that needs to be passed to multiple children. The general flow of Redux is you send an action to the reducer which then updates the state. Only the components that rely on that state will then be re-rendered, which saves us on performance. The first step to setting up Redux is creating the store.
 
 ## Redux Store
 
-In order to save our state we will want to set up our store and hook it up to our app. Luckily Redux comes with the createStore() method when we install the package. The createStore method accepts a reducer. A reducer is a function that updates our state. The Provider is used to connect our app with the store we created. In the index.js file, we can create the store and connect it with our App component so that all our child components have access to the store.
+To save our state we'll want to set up our store and hook it up to our app. Luckily Redux comes with the createStore() method when we install the package. The createStore method accepts a reducer. A reducer is a function that updates our state. The Provider is used to connect our app with the store we created. In the index.js file, we can create the store and connect it with our App component so that all our child components have access to the store.
 
 ```jsx
 import {createStore} from 'redux'
@@ -69,7 +69,7 @@ This action will be dispatched or sent to the reducer which will read the type o
 
 ## Connect
 
-In order to connect our components to the store, we need to use the connect function provided by react-redux. In our export statement, we can use the connect function to wrap the component we want to have access to the store.
+To connect our components to the store, we need to use the connect function provided by react-redux. In our export statement, we can use the connect function to wrap the component we want to have access to the store.
 
 ```jsx
 import { connect } from "react-redux"
@@ -77,7 +77,7 @@ import { connect } from "react-redux"
 export default connect()(Animes)
 ```
 
-Now our component is connected to the store but we need to do one more thing in order to use the state that is held in our store. We need to map state to props.
+Now our component is connected to the store but we need to do one more thing to use the state that is held in our store. We need to map state to props.
 
 ```jsx
 const mapStateToProps = state => {
