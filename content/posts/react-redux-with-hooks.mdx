@@ -6,9 +6,9 @@ status: 🌻
 
 If you're not familiar with [Redux](https://dev.to/talia/beginner-s-guide-to-react-redux-585e) or [hooks](https://dev.to/talia/react-hooks-1nme) feel free to check out my other articles explaining the topics and then come back! When I was first learning Redux I found all the moving parts and files incredibly hard to wrap my head around. Surprisingly, React hooks made the process of using Redux a lot easier for me. Hooks allow us to write smaller and sometimes easier to read functional components and with Redux hooks we can eliminate the tedious and confusing connect, mapStateToProps, and mapDispatchToProps.
 
-Connecting your app to the Redux store still follows the same process with hooks as it does without hooks. You will need to create a store, which accepts a reducer, and pass that store to the Provider component that will wrap your app. The main difference with hooks comes in connecting specific components to the store to access state.
+Connecting your app to the Redux store still follows the same process with hooks as it does without hooks. You will need to create a store, which accepts a reducer and pass that store to the Provider component that will wrap your app. The main difference with hooks comes in connecting specific components to the store to access state.
 
-Before hooks if we wanted a component to have access to the store we needed to use the connect higher-order component.
+Before hooks, if we wanted a component to have access to the store we needed to use the connect higher-order component.
 
 ```jsx
 import { connect } from "react-redux"
