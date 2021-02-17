@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleBlurb from "../components/ArticleBlurb"
 

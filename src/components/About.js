@@ -6,7 +6,7 @@ export default function About() {
     <>
       <h1 className="text-3xl mb-5 text-green-900">
         Hello and welcome to my digital garden!{" "}
-        <span role="img" aria-label="farmer">
+        <span role="img" aria-label="farmer emoji">
           👩‍🌾
         </span>
       </h1>
@@ -25,11 +25,11 @@ export default function About() {
         This digital garden is a place where I can take notes, share what I'm
         learning, and document my programming progress. The articles here are
         either finished (
-        <span role="img" aria-label="sunflower">
+        <span role="img" aria-label="sunflower emoji">
           🌻
         </span>
         ), or in progress (
-        <span role="img" aria-label="farmer">
+        <span role="img" aria-label="farmer emoji">
           👩‍🌾
         </span>
         ) and are being pruned and updated as I learn more! To read more about
