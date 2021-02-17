@@ -28,7 +28,7 @@ export default function Articles({ data }) {
             />
           </div>
           {filteredData.map(({ node }) => (
-            <ArticleBlurb node={node} />
+            <ArticleBlurb node={node} key={node.id} />
           ))}
         </div>
       </Layout>
@@ -48,7 +48,7 @@ export default function Articles({ data }) {
           />
         </div>
         {data.allMdx.edges.map(({ node }) => (
-          <ArticleBlurb node={node} />
+          <ArticleBlurb node={node} key={node.id} />
         ))}
       </div>
     </Layout>
