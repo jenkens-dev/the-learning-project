@@ -8,7 +8,7 @@ export default function ArticleBlurb({ node }) {
       key={node.id}
     >
       <Link to={node.fields.slug}>
-        <div className="flex items-center">
+        <div className="flex flex-wrap">
           <h3 className="text-lg font-semibold">{node.frontmatter.title}</h3>
           <span className="whitespace-pre font-light">
             {" "}
