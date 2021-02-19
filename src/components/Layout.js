@@ -6,7 +6,7 @@ import Footer from "./Footer"
 export default function Layout({ children }) {
   return (
     <div className="bg-green-50 min-h-screen">
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen mx-8">
         <SEO />
         <NavBar />
         <div className="flex-grow max-w-xs mx-auto my-0 sm:max-w-3xl">
