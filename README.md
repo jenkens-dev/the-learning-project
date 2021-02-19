@@ -1,6 +1,6 @@
 # Jen's Digital Garden
 
-This project is built using [Gatsby](https://www.gatsbyjs.org/)
+This project is built using [Gatsby](https://www.gatsbyjs.org/) and [Tailwind CSS](https://tailwindcss.com/)
 
 ## Features
 
@@ -10,7 +10,7 @@ This project is built using [Gatsby](https://www.gatsbyjs.org/)
 ## Setup
 
 - Clone the repo and open the file on your local machine
-- Run ```npm install``` and then ```npm start``` to start the Gatsby server 
+- Run `npm install` and then `npm start` to start the Gatsby server
 
 ## Contributions
 

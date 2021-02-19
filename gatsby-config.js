@@ -20,8 +20,8 @@ module.exports = {
         extensions: [`.md`, `.mdx`],
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-transformer-remark`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,

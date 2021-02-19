@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import ArticleBlurb from "../components/ArticleBlurb"
 
 export default function Articles({ data }) {
   const [search, setSearch] = useState("")
@@ -16,25 +17,18 @@ export default function Articles({ data }) {
     })
     return (
       <Layout>
-        <div className="blogPosts">
-          <input
-            className="searchBox"
-            type="text"
-            placeholder="Filter articles"
-            value={search}
-            onChange={handleChange}
-          />
+        <div>
+          <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
+            <input
+              type="text"
+              placeholder="Search articles"
+              value={search}
+              onChange={handleChange}
+              className="w-full rounded p-2 placeholder-gray-500"
+            />
+          </div>
           {filteredData.map(({ node }) => (
-            <div key={node.id}>
-              <Link to={node.fields.slug}>
-                <h3 className="blogPostTitle">
-                  {node.frontmatter.title}{" "}
-                  <span>— {node.frontmatter.date}</span>
-                  <span>: {node.frontmatter.status}</span>
-                </h3>
-                <p>{node.excerpt}</p>
-              </Link>
-            </div>
+            <ArticleBlurb node={node} key={node.id} />
           ))}
         </div>
       </Layout>
@@ -43,24 +37,18 @@ export default function Articles({ data }) {
 
   return (
     <Layout>
-      <div className="blogPosts">
-        <input
-          className="searchBox"
-          type="text"
-          placeholder="Filter articles"
-          value={search}
-          onChange={handleChange}
-        />
+      <div>
+        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
+          <input
+            type="text"
+            placeholder="Search articles"
+            value={search}
+            onChange={handleChange}
+            className="w-full rounded p-2 placeholder-gray-500"
+          />
+        </div>
         {data.allMdx.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3 className="blogPostTitle">
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-                <span>: {node.frontmatter.status}</span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
+          <ArticleBlurb node={node} key={node.id} />
         ))}
       </div>
     </Layout>

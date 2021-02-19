@@ -4,7 +4,7 @@ date: "2019-11-26"
 status: 🌻
 ---
 
-React is a JavaScript library, created by Facebook and open-sourced in 2013. React was created to help build simple and reusable interfaces. The main idea was to divide the UI into small individual components. These individual and reusable components are the core feature of React. The important pieces to understand about React are Components, JSX, State, and Props.
+React is a JavaScript library created by Facebook and open-sourced in 2013. React was created to help build simple and reusable interfaces. The main idea was to divide the UI into small individual components. These individual and reusable components are the core feature of React. The important pieces to understand about React are Components, JSX, State, and Props.
 
 ## Components
 
@@ -37,7 +37,7 @@ const element = <h1>My name is {name}</h1>
 
 ## State
 
-State is an object that is tied to a Class component. It can be initialized or changed through user input or APIs. State is held by a parent component and can be passed to its children through props. This Unidirectional Flow is a key feature of React. A component's state must be stored high enough in the component hierarchy to pass it to all its children, without having to pass it through unnecessary components. State can only be passed down and not laterally to sibling components. Whenever a components' state is altered, the component, as well as all its children, will update and reflect this new state.
+State is an object that is tied to a Class component (*note this is no longer true with React hooks*). It can be initialized or changed through user input or APIs. State is held by a parent component and can be passed to its children through props. This Unidirectional Flow is a key feature of React. A component's state must be stored high enough in the component hierarchy to pass it to all its children, without having to pass it through unnecessary components. State can only be passed down and not laterally to sibling components. Whenever a components' state is altered, the component, as well as all its children, will update and reflect this new state.
 
 ```jsx
 class FetchData extends React.Component {
@@ -67,4 +67,4 @@ const KanjiData = props => {
 }
 ```
 
-Remember a library is just a tool to help make developers' lives easier. If you find yourself wanting to learn more React I highly encourage you to take a look at the [React Docs](https://reactjs.org/docs/getting-started.html), they are my favorite resource or look through the small [Kanji App](https://github.com/Taljjaa/Random-Kanji-App) I made. Everything you do in React can be done with vanilla JavaScript. React and other JavaScript libraries like Angular, Vue, and Ember are be no means required tools.
+Remember a library is just a tool to help make developers' lives easier. If you find yourself wanting to learn more React I highly encourage you to take a look at the [React Docs](https://reactjs.org/docs/getting-started.html), they are my favorite resource or look through the small [Kanji App](https://github.com/Taljjaa/Random-Kanji-App) I made. Everything you do in React can be done with vanilla JavaScript. React and other JavaScript libraries like Angular, Vue, and Ember are by no means required tools.

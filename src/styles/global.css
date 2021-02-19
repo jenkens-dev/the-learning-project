@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background: rgba(6, 78, 59, 1);
+    color: white;
+  }
+  body {
+    @apply min-h-screen;
+  }
+  #___gatsby {
+    @apply min-h-screen;
+  }
+  #gatsby-focus-wrapper {
+    @apply min-h-screen;
+  }
+
+  .linkUnderline {
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 78, 59, 1);
+  }
+
+  .linkUnderline:hover {
+    text-decoration-color: rgba(52, 211, 153, 1);
+  }
+}
+
+@layer components {
+  /* Headers */
+  .markdown h1 {
+    @apply text-2xl my-6 font-semibold;
+  }
+  .markdown h2 {
+    @apply text-xl my-6 font-semibold;
+  }
+
+  /* Links */
+  .markdown a {
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 78, 59, 1);
+  }
+  .markdown a:hover {
+    text-decoration-color: rgba(52, 211, 153, 1);
+  }
+
+  /* Paragraph */
+  .markdown p {
+    @apply mb-4 text-lg;
+  }
+
+  /* Lists */
+  .markdown ul,
+  .markdown ol {
+    @apply mb-4 ml-8;
+  }
+  .markdown li > p,
+  .markdown li > ul,
+  .markdown li > ol {
+    @apply mb-0;
+  }
+  .markdown ol {
+    @apply list-decimal;
+  }
+  .markdown ul {
+    @apply list-disc;
+  }
+
+  /* Code Blocks */
+  .markdown pre {
+    @apply my-2;
+  }
+}

@@ -35,7 +35,7 @@ Now we have our state set in the variable theme and we can update our state with
 
 ## useEffect Hook
 
-The useEffect is important for controlling the side effects of your component. A side effect is anything that interacts with the outside world or outside its scope. This includes fetching data, changing the DOM, and making network requests. These effects were normally done with class components and lifecycle methods before hooks. useEffect runs every time a component renders, because of this if you re-render within useEffect you will cause an infinite loop. In order to prevent this, useEffect takes an optional second parameter.
+The useEffect is important for controlling the side effects of your component. A side effect is anything that interacts with the outside world or outside its scope. This includes fetching data, changing the DOM, and making network requests. These effects were normally done with class components and lifecycle methods before hooks. useEffect runs every time a component renders, because of this if you re-render within useEffect you will cause an infinite loop. To prevent this, useEffect takes an optional second parameter.
 
 ```jsx
 React.useEffect(() => {
