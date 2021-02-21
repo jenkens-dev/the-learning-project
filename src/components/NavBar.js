@@ -6,13 +6,16 @@ export default function NavBar() {
   return (
     <nav className="flex items-center justify-between pt-2 pb-6 text-xl">
       <div>
-        <Link className="text-green-900" to="/">
+        <Link className="text-green-900 dark:text-green-400" to="/">
           Home
         </Link>
       </div>
       <div className="flex items-center">
         <DarkModeToggle />
-        <Link className="ml-4 text-green-900" to="/articles">
+        <Link
+          className="ml-4 text-green-900 dark:text-green-400"
+          to="/articles"
+        >
           All Posts
         </Link>
       </div>

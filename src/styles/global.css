@@ -17,12 +17,25 @@
     @apply min-h-screen;
   }
 
+  .dark .linkUnderline {
+    text-decoration: underline;
+    /* text-green-400 */
+    text-decoration-color: rgba(52, 211, 153, 1);
+  }
+
+  .dark .linkUnderline:hover {
+    /* text-green-100 */
+    text-decoration-color: rgba(209, 250, 229, 1);
+  }
+
   .linkUnderline {
     text-decoration: underline;
+    /* text-green-900 */
     text-decoration-color: rgba(6, 78, 59, 1);
   }
 
   .linkUnderline:hover {
+    /* text-green-400 */
     text-decoration-color: rgba(52, 211, 153, 1);
   }
 }
@@ -30,13 +43,25 @@
 @layer components {
   /* Headers */
   .markdown h1 {
-    @apply text-2xl my-6 font-semibold;
+    @apply text-2xl my-6 font-semibold text-green-900 dark:text-green-400;
   }
   .markdown h2 {
-    @apply text-xl my-6 font-semibold;
+    @apply text-xl my-6 font-semibold text-green-900 dark:text-green-400;
   }
 
   /* Links */
+
+  .dark .markdown a {
+    text-decoration: underline;
+    /* text-green-400 */
+    text-decoration-color: rgba(52, 211, 153, 1);
+  }
+
+  .dark .markdown a:hover {
+    /* text-green-100 */
+    text-decoration-color: rgba(209, 250, 229, 1);
+  }
+
   .markdown a {
     text-decoration: underline;
     text-decoration-color: rgba(6, 78, 59, 1);

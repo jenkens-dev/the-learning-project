@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function About() {
   return (
     <>
-      <h1 className="text-3xl mb-5 text-green-900">
+      <h1 className="text-3xl mb-5 text-green-900 dark:text-green-400">
         Hello and welcome to my digital garden!{" "}
         <span role="img" aria-label="farmer emoji">
           👩‍🌾
@@ -34,7 +34,10 @@ export default function About() {
         </span>
         ) and are being pruned and updated as I learn more! To read more about
         digital gardens check out my{" "}
-        <Link className="linkUnderline" to="/blog/digital-garden">
+        <Link
+          className="linkUnderline dark:darkUnderline"
+          to="/blog/digital-garden"
+        >
           article
         </Link>
         !

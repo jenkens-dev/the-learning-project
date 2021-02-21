@@ -1,14 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
 import About from "../components/About"
 import Layout from "../components/Layout"
+import { Link } from "gatsby"
 
 const BlogIndex = () => {
   return (
     <Layout>
       <About />
       <div>
-        <h3 className="text-2xl mb-5 text-green-900">My favorite posts</h3>
+        <h3 className="text-2xl mb-5 text-green-900 dark:text-green-400">
+          My favorite posts
+        </h3>
         <ul className="inline-block list-disc list-inside">
           <Link
             className="linkUnderline"

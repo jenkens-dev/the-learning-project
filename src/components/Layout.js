@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <div className="flex flex-col min-h-screen mx-8">
           <SEO />
           <NavBar />
-          <div className="flex-grow max-w-xs mx-auto my-0 sm:max-w-3xl">
+          <div className="flex-grow max-w-xs mx-auto my-0 sm:max-w-3xl dark:text-white">
             {children}
           </div>
           <Footer />

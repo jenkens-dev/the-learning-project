@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function ArticleBlurb({ node }) {
   return (
     <div
-      className="my-4 bg-white rounded p-5 shadow-green transform transition duration-500 hover:scale-105"
+      className="my-4 bg-white rounded p-5 shadow-green transform transition duration-500 hover:scale-105 dark:text-black"
       key={node.id}
     >
       <Link to={node.fields.slug}>
