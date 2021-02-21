@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function ArticleBlurb({ node }) {
+const ArticleBlurb = ({ node }) => {
   return (
     <div
       className="my-4 bg-white rounded p-5 shadow-green transform transition duration-500 hover:scale-105 dark:text-black"
@@ -21,3 +21,5 @@ export default function ArticleBlurb({ node }) {
     </div>
   )
 }
+
+export default ArticleBlurb

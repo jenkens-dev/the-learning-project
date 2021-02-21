@@ -2,7 +2,7 @@ import React from "react"
 import DarkModeToggle from "./DarkModeToggle"
 import { Link } from "gatsby"
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <nav className="flex items-center justify-between pt-2 pb-6 text-xl">
       <div>
@@ -22,3 +22,5 @@ export default function NavBar() {
     </nav>
   )
 }
+
+export default NavBar

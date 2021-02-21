@@ -19,7 +19,7 @@ const getInitialTheme = () => {
 
 export const ThemeContext = React.createContext()
 
-export default function ThemeProvider({ initialTheme, children }) {
+const ThemeProvider = ({ initialTheme, children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme)
 
   const rawSetTheme = rawTheme => {
@@ -46,3 +46,5 @@ export default function ThemeProvider({ initialTheme, children }) {
     </ThemeContext.Provider>
   )
 }
+
+export default ThemeProvider

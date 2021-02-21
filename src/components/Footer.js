@@ -2,7 +2,7 @@ import React from "react"
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai"
 import { IconContext } from "react-icons"
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="flex flex-shrink-0 py-3">
       <IconContext.Provider
@@ -22,3 +22,5 @@ export default function Footer() {
     </div>
   )
 }
+
+export default Footer

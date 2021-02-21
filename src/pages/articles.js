@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleBlurb from "../components/ArticleBlurb"
 
-export default function Articles({ data }) {
+const Articles = ({ data }) => {
   const [search, setSearch] = useState("")
 
   const handleChange = e => {
@@ -24,7 +24,7 @@ export default function Articles({ data }) {
               placeholder="Search articles"
               value={search}
               onChange={handleChange}
-              className="w-full rounded p-2 placeholder-gray-500"
+              className="w-full rounded p-2 placeholder-gray-500 text-black"
             />
           </div>
           {filteredData.map(({ node }) => (
@@ -44,7 +44,7 @@ export default function Articles({ data }) {
             placeholder="Search articles"
             value={search}
             onChange={handleChange}
-            className="w-full rounded p-2 placeholder-gray-500"
+            className="w-full rounded p-2 placeholder-gray-500 text-black"
           />
         </div>
         {data.allMdx.edges.map(({ node }) => (
@@ -75,3 +75,4 @@ export const query = graphql`
     }
   }
 `
+export default Articles

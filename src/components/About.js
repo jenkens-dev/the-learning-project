@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function About() {
+const About = () => {
   return (
     <>
       <h1 className="text-3xl mb-5 text-green-900 dark:text-green-400">
@@ -45,3 +45,5 @@ export default function About() {
     </>
   )
 }
+
+export default About

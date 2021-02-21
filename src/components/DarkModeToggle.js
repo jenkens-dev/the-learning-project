@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import { ThemeContext } from "./ThemeContext"
 import { HiMoon, HiSun } from "react-icons/hi"
 
-export default function DarkModeToggle() {
-  const { theme, setTheme } = React.useContext(ThemeContext)
+const DarkModeToggle = () => {
+  const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <div className="transition duration-500 ease-in-out rounded-full p-2">
@@ -21,3 +21,5 @@ export default function DarkModeToggle() {
     </div>
   )
 }
+
+export default DarkModeToggle
