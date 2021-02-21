@@ -5,6 +5,7 @@ import ArticleBlurb from "../components/ArticleBlurb"
 
 const Articles = ({ data }) => {
   const [search, setSearch] = useState("")
+  let articles = data.allMdx.edges
 
   const handleChange = e => {
     e.preventDefault()
@@ -12,33 +13,15 @@ const Articles = ({ data }) => {
   }
 
   if (search.length > 0) {
-    const filteredData = data.allMdx.edges.filter(({ node }) => {
+    articles = data.allMdx.edges.filter(({ node }) => {
       return node.frontmatter.title.toLowerCase().includes(search.toLowerCase())
     })
-    return (
-      <Layout>
-        <div>
-          <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
-            <input
-              type="text"
-              placeholder="Search articles"
-              value={search}
-              onChange={handleChange}
-              className="w-full rounded p-2 placeholder-gray-500 text-black"
-            />
-          </div>
-          {filteredData.map(({ node }) => (
-            <ArticleBlurb node={node} key={node.id} />
-          ))}
-        </div>
-      </Layout>
-    )
   }
 
   return (
     <Layout>
       <div>
-        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
+        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto rounded">
           <input
             type="text"
             placeholder="Search articles"
@@ -47,7 +30,7 @@ const Articles = ({ data }) => {
             className="w-full rounded p-2 placeholder-gray-500 text-black"
           />
         </div>
-        {data.allMdx.edges.map(({ node }) => (
+        {articles.map(({ node }) => (
           <ArticleBlurb node={node} key={node.id} />
         ))}
       </div>
