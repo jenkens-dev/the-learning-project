@@ -20,20 +20,22 @@ const Articles = ({ data }) => {
 
   return (
     <Layout>
-      <div>
-        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto rounded">
-          <input
-            type="text"
-            placeholder="Search articles"
-            value={search}
-            onChange={handleChange}
-            className="w-full rounded p-2 placeholder-gray-500 text-black"
-          />
-        </div>
-        {articles.map(({ node }) => (
-          <ArticleBlurb node={node} key={node.id} />
-        ))}
+      <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
+        <input
+          type="text"
+          placeholder="Search articles"
+          value={search}
+          onChange={handleChange}
+          className="w-full rounded p-2 placeholder-green-900 text-green-900"
+        />
       </div>
+      {articles.length === 0 ? (
+        <div className="text-3xl text-green-900 dark:text-green-400">
+          Sorry no articles found!
+        </div>
+      ) : (
+        articles.map(({ node }) => <ArticleBlurb node={node} key={node.id} />)
+      )}
     </Layout>
   )
 }
