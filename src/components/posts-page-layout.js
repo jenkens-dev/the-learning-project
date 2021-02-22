@@ -14,7 +14,7 @@ const components = {
   ),
 }
 
-export default function PageTemplate({ data: { mdx } }) {
+const PageTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
       <div className="markdown flex flex-col items-center">
@@ -40,3 +40,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default PageTemplate

@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleBlurb from "../components/ArticleBlurb"
 
-export default function Articles({ data }) {
+const Articles = ({ data }) => {
   const [search, setSearch] = useState("")
+  let articles = data.allMdx.edges
 
   const handleChange = e => {
     e.preventDefault()
@@ -12,45 +13,29 @@ export default function Articles({ data }) {
   }
 
   if (search.length > 0) {
-    const filteredData = data.allMdx.edges.filter(({ node }) => {
+    articles = data.allMdx.edges.filter(({ node }) => {
       return node.frontmatter.title.toLowerCase().includes(search.toLowerCase())
     })
-    return (
-      <Layout>
-        <div>
-          <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
-            <input
-              type="text"
-              placeholder="Search articles"
-              value={search}
-              onChange={handleChange}
-              className="w-full rounded p-2 placeholder-gray-500"
-            />
-          </div>
-          {filteredData.map(({ node }) => (
-            <ArticleBlurb node={node} key={node.id} />
-          ))}
-        </div>
-      </Layout>
-    )
   }
 
   return (
     <Layout>
-      <div>
-        <div className="max-w-lg bg-white shadow p-2 mb-8 mx-auto">
-          <input
-            type="text"
-            placeholder="Search articles"
-            value={search}
-            onChange={handleChange}
-            className="w-full rounded p-2 placeholder-gray-500"
-          />
-        </div>
-        {data.allMdx.edges.map(({ node }) => (
-          <ArticleBlurb node={node} key={node.id} />
-        ))}
+      <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
+        <input
+          type="text"
+          placeholder="Search articles"
+          value={search}
+          onChange={handleChange}
+          className="w-full rounded p-2 placeholder-green-900 text-green-900"
+        />
       </div>
+      {articles.length === 0 ? (
+        <div className="text-3xl text-green-900 dark:text-green-400">
+          Sorry no articles found!
+        </div>
+      ) : (
+        articles.map(({ node }) => <ArticleBlurb node={node} key={node.id} />)
+      )}
     </Layout>
   )
 }
@@ -75,3 +60,4 @@ export const query = graphql`
     }
   }
 `
+export default Articles
