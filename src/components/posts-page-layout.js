@@ -4,6 +4,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/Layout"
 import CodeBlock from "../components/CodeBlock"
+import SEO from "../components/SEO"
 
 const components = {
   code: CodeBlock,
@@ -17,6 +18,11 @@ const components = {
 const PageTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.excerpt}
+        pathname={mdx.slug}
+      />
       <div className="markdown flex flex-col items-center">
         <h1>{mdx.frontmatter.title}</h1>
         <MDXProvider components={components}>
@@ -34,6 +40,8 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      slug
+      excerpt
       frontmatter {
         title
       }
