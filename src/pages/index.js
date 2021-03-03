@@ -2,10 +2,12 @@ import React from "react"
 import About from "../components/About"
 import Layout from "../components/Layout"
 import { Link } from "gatsby"
+import SEO from "../components/SEO"
 
 const BlogIndex = () => {
   return (
     <Layout>
+      <SEO />
       <About />
       <div>
         <h3 className="text-2xl mb-5 text-green-900 dark:text-green-400">
