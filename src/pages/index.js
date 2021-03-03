@@ -14,20 +14,24 @@ const BlogIndex = () => {
           My favorite posts
         </h2>
         <ul className="inline-block list-disc list-inside">
-          <Link
-            className="linkUnderline"
-            to="/blog/beginners-guide-to-react-redux/"
-          >
-            <li>Beginner's Guide to React Redux</li>
-          </Link>
-
-          <Link className="linkUnderline" to="/blog/react-redux-with-hooks/">
-            <li>React Redux with Hooks</li>
-          </Link>
-
-          <Link className="linkUnderline" to="/blog/what-is-graphql/">
-            <li>What is GraphQL?</li>
-          </Link>
+          <li>
+            <Link
+              className="linkUnderline"
+              to="/blog/beginners-guide-to-react-redux/"
+            >
+              Beginner's Guide to React Redux
+            </Link>
+          </li>
+          <li>
+            <Link className="linkUnderline" to="/blog/react-redux-with-hooks/">
+              React Redux with Hooks
+            </Link>
+          </li>
+          <li>
+            <Link className="linkUnderline" to="/blog/what-is-graphql/">
+              What is GraphQL?
+            </Link>
+          </li>
         </ul>
       </div>
     </Layout>
