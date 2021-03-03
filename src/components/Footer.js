@@ -9,14 +9,16 @@ const Footer = () => {
         value={{ className: "w-7 h-7 text-githubGray dark:text-white" }}
       >
         <a href="https://github.com/Taljjaa">
-          <AiFillGithub />
+          <AiFillGithub aria-hidden="true" />
+          <span class="sr-only">Github</span>
         </a>
       </IconContext.Provider>
       <IconContext.Provider
         value={{ className: "ml-2 w-7 h-7 text-twitterBlue" }}
       >
         <a href="https://twitter.com/jenkens_">
-          <AiOutlineTwitter />
+          <AiOutlineTwitter aria-hidden="true" />
+          <span class="sr-only">Twitter</span>
         </a>
       </IconContext.Provider>
     </div>
