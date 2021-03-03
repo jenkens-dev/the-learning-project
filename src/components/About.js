@@ -17,8 +17,14 @@ const About = () => {
         TypeScript, GraphQL, and Redux. I also enjoy leveling up my skills in
         CSS and testing. When I'm not programming I enjoy playing with my dog,
         reading manga, teaching myself Japanese, and playing videogames. And to
-        learn more about me, feel free to read my article about my{" "}
-        <Link to="/blog/my-journey-into-tech">journey into tech</Link>.
+        learn more about me, feel free to read my{" "}
+        <Link
+          className="linkUnderline dark:darkUnderline"
+          to="/blog/my-journey-into-tech"
+        >
+          article about my journey into tech
+        </Link>
+        .
       </p>
       <p className="mb-5">
         This digital garden is a place where I can take notes, share what I'm
@@ -27,12 +33,12 @@ const About = () => {
         <Emoji symbol="🌻" label="sunflower emoji" />
         ), or in progress (
         <Emoji symbol="👩‍🌾" label="farmer emoji" />) and are being pruned and
-        updated as I learn more! To read more about digital gardens check out my{" "}
+        updated as I learn more! Check out my{" "}
         <Link
           className="linkUnderline dark:darkUnderline"
           to="/blog/digital-garden"
         >
-          article
+          article about digital gardens
         </Link>
         !
       </p>
