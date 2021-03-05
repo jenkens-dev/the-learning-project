@@ -22,6 +22,7 @@ const PageTemplate = ({ data: { mdx } }) => {
         title={mdx.frontmatter.title}
         description={mdx.excerpt}
         pathname={mdx.slug}
+        article={true}
       />
       <div className="markdown flex flex-col items-center">
         <h1>{mdx.frontmatter.title}</h1>
