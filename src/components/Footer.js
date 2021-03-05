@@ -10,7 +10,7 @@ const Footer = () => {
       >
         <a href="https://github.com/Taljjaa">
           <AiFillGithub aria-hidden="true" />
-          <span class="sr-only">Github</span>
+          <span className="sr-only">Github</span>
         </a>
       </IconContext.Provider>
       <IconContext.Provider
@@ -18,7 +18,7 @@ const Footer = () => {
       >
         <a href="https://twitter.com/jenkens_">
           <AiOutlineTwitter aria-hidden="true" />
-          <span class="sr-only">Twitter</span>
+          <span className="sr-only">Twitter</span>
         </a>
       </IconContext.Provider>
     </div>
