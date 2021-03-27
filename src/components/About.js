@@ -17,7 +17,7 @@ const About = () => {
         favorite part. Some of my favorite technologies are React, TypeScript,
         GraphQL, and Redux. I also enjoy leveling up my skills in CSS and
         testing. When I'm not programming I enjoy playing with my dog, reading
-        manga, teaching myself Japanese, and playing videogames. And to learn
+        manga, teaching myself Japanese, and playing video games. And to learn
         more about me, feel free to read my{" "}
         <Link
           className="linkUnderline dark:darkUnderline"
