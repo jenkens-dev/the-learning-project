@@ -8,7 +8,7 @@ const Footer = () => {
       <IconContext.Provider
         value={{ className: "w-7 h-7 text-githubGray dark:text-white" }}
       >
-        <a href="https://github.com/Taljjaa">
+        <a href="https://github.com/jenkens-dev">
           <AiFillGithub aria-hidden="true" />
           <span className="sr-only">Github</span>
         </a>
