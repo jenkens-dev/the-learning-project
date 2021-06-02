@@ -31,6 +31,14 @@ const PageTemplate = ({ data: { mdx } }) => {
             {mdx.body}
           </MDXRenderer>
         </MDXProvider>
+        Enjoyed the article?
+        <a
+          href={`https://twitter.com/intent/tweet?text=${mdx.frontmatter.title}&url=https://www.jenkens.dev/blog/${mdx.slug}&via=jenkens_`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Share it on Twitter
+        </a>
       </div>
     </Layout>
   )
