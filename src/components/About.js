@@ -26,12 +26,12 @@ const About = () => {
           article about my journey into tech
         </Link>{" "}
         or{" "}
-        <Link
+        <a
           className="linkUnderline dark:darkUnderline"
-          to="https://docs.google.com/document/d/1jg6qBShEtZ4OMEPJe33Pr2EEyi7ctY4AkveQI9DGIpg/edit?usp=sharing"
+          href="https://docs.google.com/document/d/1jg6qBShEtZ4OMEPJe33Pr2EEyi7ctY4AkveQI9DGIpg/edit?usp=sharing"
         >
           check out my resume.
-        </Link>
+        </a>
       </p>
       <p className="mb-5">
         This digital garden is a place where I can take notes, share what I'm
