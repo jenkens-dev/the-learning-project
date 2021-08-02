@@ -8,6 +8,12 @@ const Articles = ({ data }) => {
   const [search, setSearch] = useState("")
   let articles = data.allMdx.edges
 
+  const allTagsWithDups = articles.map(article => {
+    return article.node.frontmatter.tags
+  })
+
+  const tags = [...new Set(allTagsWithDups.flat(Infinity))]
+
   const handleChange = e => {
     e.preventDefault()
     setSearch(e.target.value)
@@ -35,6 +41,9 @@ const Articles = ({ data }) => {
           Search articles
         </label>
       </div>
+      {tags.map(tag => {
+        return <button className="bg-white m-2 rounded p-2">{tag}</button>
+      })}
       {articles.length === 0 ? (
         <div className="text-3xl text-green-900 dark:text-green-400">
           Sorry no articles found!
@@ -56,6 +65,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             status
+            tags
           }
           fields {
             slug
