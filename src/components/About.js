@@ -17,8 +17,8 @@ const About = () => {
         favorite part. Some of my favorite technologies are React, TypeScript,
         GraphQL, and Redux. I also enjoy leveling up my skills in CSS and
         testing. When I'm not programming I enjoy playing with my dog, reading
-        manga, teaching myself Japanese, and playing video games. And to learn
-        more about me, feel free to read my{" "}
+        manga, teaching myself Japanese, and playing video games. To learn more
+        about me, feel free to read my{" "}
         <Link
           className="linkUnderline dark:darkUnderline"
           to="/blog/my-journey-into-tech"
@@ -35,8 +35,8 @@ const About = () => {
       </p>
       <p className="mb-5">
         This digital garden is a place where I can take notes, share what I'm
-        learning, and document my programming progress. The articles here are
-        either finished (
+        learning, and document my growth. The articles here are either finished
+        (
         <Emoji symbol="🌻" label="sunflower emoji" />
         ), or in progress (
         <Emoji symbol="👩‍🌾" label="farmer emoji" />) and are being pruned and
