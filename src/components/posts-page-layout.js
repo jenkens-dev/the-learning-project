@@ -26,6 +26,9 @@ const PageTemplate = ({ data: { mdx } }) => {
       />
       <div className="markdown flex flex-col items-center">
         <h1>{mdx.frontmatter.title}</h1>
+        {mdx.frontmatter.tags.map(tag => {
+          return <p>{tag}</p>
+        })}
         <MDXProvider components={components}>
           <MDXRenderer className="flex flex-col items-center">
             {mdx.body}
@@ -53,6 +56,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
+        tags
       }
     }
   }
