@@ -25,10 +25,18 @@ const PageTemplate = ({ data: { mdx } }) => {
         article={true}
       />
       <div className="markdown flex flex-col items-center">
-        <h1>{mdx.frontmatter.title}</h1>
-        {mdx.frontmatter.tags.map(tag => {
-          return <p>{tag}</p>
-        })}
+        <h1 className="text-3xl mt-6 font-semibold text-green-900 dark:text-green-400">
+          {mdx.frontmatter.title}
+        </h1>
+        <div className="w-full flex justify-end">
+          {mdx.frontmatter.tags.map((tag, index) => {
+            return (
+              <p key={index} className="mr-2 text-gray-600">
+                {tag}
+              </p>
+            )
+          })}
+        </div>
         <MDXProvider components={components}>
           <MDXRenderer className="flex flex-col items-center">
             {mdx.body}
