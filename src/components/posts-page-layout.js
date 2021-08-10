@@ -38,9 +38,7 @@ const PageTemplate = ({ data: { mdx } }) => {
           })}
         </div>
         <MDXProvider components={components}>
-          <MDXRenderer className="flex flex-col items-center">
-            {mdx.body}
-          </MDXRenderer>
+          <MDXRenderer className="flex flex-col">{mdx.body}</MDXRenderer>
         </MDXProvider>
         Enjoyed the article?
         <a
