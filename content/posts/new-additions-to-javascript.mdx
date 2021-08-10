@@ -39,8 +39,11 @@ const nullValue = myObj.nullValue || "some default" // 'some default'
 This works well for null and undefined values, we can assign them to default values with a little extra work. Unfortunately, JavaScript falsy values can produce some unexpected results.
 
 ```javascript
-const age = myObj.age || 111 // 111 because 0 is falsy
-const favoriteAnimal = myObj.favoriteAnimal || "Seagull" // 'Seagull' because '' is also a falsy value
+ // 111 because 0 is falsy
+const age = myObj.age || 111
+
+// 'Seagull' because '' is also a falsy value
+const favoriteAnimal = myObj.favoriteAnimal || "Seagull" 
 ```
 
 This is where nullish coalescing comes in. Written as ?? it performs a similar job to || but with one major difference. If the value on the left-hand side of the ?? operator is null or undefined only then will the right-hand side be used!
@@ -52,7 +55,8 @@ const nullValue = myObj.nullValue ?? "some default" // 'some default'
 
 const age = myObj.age ?? 111 // 0!
 const favoriteAnimal = myObj.favoriteAnimal ?? "Seagull" // ''
-//because the values on the left-hand side were not null or undefined the right-hand side is ignored!
+// because the values on the left-hand side were not null or undefined 
+// the right-hand side is ignored!
 ```
 
 ## Optional Chaining
@@ -66,8 +70,12 @@ const myObj = {
   },
 }
 
-const anime = myObj.favoriteThing.anime //This works if favoriteThings exists but if it is undefined we will get an error
-const anime = myObj.favoriteThing ? myObj.favoriteThing.anime : undefined //works but very tedious
+// This works if favoriteThings exists 
+// but if it is undefined we will get an error
+const anime = myObj.favoriteThing.anime
+
+// works but very tedious
+const anime = myObj.favoriteThing ? myObj.favoriteThing.anime : undefined 
 ```
 
 Enter optional chaining which is written as ?.
@@ -79,7 +87,9 @@ const anime = myObj.favoriteThings?.anime
 Optional chaining will not throw an error and will instead evaluate the expression to undefined! Optional chaining gets even more powerful when used with nullish coalescing.
 
 ```javascript
-const bad = myObj.badThings?.insects ?? "Mosquitos" //Because myObj.badThings evaluates to undefined nullish coalescing will return the right-hand side 'Mosquitos'
+const bad = myObj.badThings?.insects ?? "Mosquitos" 
+// Because myObj.badThings evaluates to undefined 
+// nullish coalescing will return the right-hand side 'Mosquitos'
 ```
 
 Optional chaining can be used multiple times in a single expression for deeply nested objects or potentially null objects. It is also not confined to just objects, you can use optional chaining on arrays and function calls!
