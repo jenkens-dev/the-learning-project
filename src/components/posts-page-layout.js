@@ -31,7 +31,7 @@ const PageTemplate = ({ data: { mdx } }) => {
         <div className="w-full flex justify-end">
           {mdx.frontmatter.tags.map((tag, index) => {
             return (
-              <p key={index} className="mr-2 text-gray-600">
+              <p key={index} className="mr-2 text-gray-600 dark:text-gray-300">
                 {tag}
               </p>
             )

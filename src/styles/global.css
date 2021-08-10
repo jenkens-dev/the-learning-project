@@ -69,7 +69,7 @@
 
   /* Paragraph */
   .markdown p {
-    @apply mb-4 text-lg;
+    @apply text-lg;
   }
 
   /* Lists */
