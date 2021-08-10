@@ -91,6 +91,6 @@
 
   /* Code Blocks */
   .markdown pre {
-    @apply my-2;
+    @apply my-2 mx-auto;
   }
 }
