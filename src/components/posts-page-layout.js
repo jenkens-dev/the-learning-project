@@ -15,6 +15,9 @@ const components = {
   ),
 }
 
+const githubUrl =
+  "https://github.com/jenkens-dev/the-learning-project/blob/master/content/posts/"
+
 const PageTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
@@ -28,17 +31,22 @@ const PageTemplate = ({ data: { mdx } }) => {
         <h1 className="text-3xl mt-6 font-semibold text-green-900 dark:text-green-400">
           {mdx.frontmatter.title}
         </h1>
-        <div className="w-full flex justify-end">
-          {mdx.frontmatter.tags.map((tag, index) => {
-            return (
-              <span
-                key={index}
-                className="mr-2 text-gray-600 dark:text-gray-300"
-              >
-                {tag}
-              </span>
-            )
-          })}
+        <div className="w-full flex flex-col items-end">
+          <div>
+            {mdx.frontmatter.tags.map((tag, index) => {
+              return (
+                <span
+                  key={index}
+                  className="mr-2 text-gray-600 dark:text-gray-300"
+                >
+                  {tag}
+                </span>
+              )
+            })}
+          </div>
+          <a className="block" href={`${githubUrl}${mdx.slug}.mdx`}>
+            Edit
+          </a>
         </div>
         <MDXProvider components={components}>
           <MDXRenderer className="flex flex-col">{mdx.body}</MDXRenderer>
