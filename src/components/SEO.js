@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, article, pathname }) => {
+const SEO = ({ title, description, image, article, pathname, socialImage }) => {
   const { site } = useStaticQuery(query)
 
   const {
@@ -32,7 +32,7 @@ const SEO = ({ title, description, image, article, pathname }) => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property="og:image" content={socialImage ?? seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
@@ -67,6 +67,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   article: PropTypes.bool,
+  socialImage: PropTypes.string
 }
 
 SEO.defaultProps = {
@@ -74,4 +75,5 @@ SEO.defaultProps = {
   description: null,
   image: null,
   article: false,
+  socialImage: null
 }
