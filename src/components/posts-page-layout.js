@@ -23,7 +23,7 @@ const PageTemplate = ({ data: { mdx } }) => {
     <Layout>
       <SEO
         title={mdx.frontmatter.title}
-        tagline={mdx.frontmatter.tags}
+        tags={mdx.frontmatter.tags}
         description={mdx.excerpt}
         pathname={mdx.slug}
         article={true}
