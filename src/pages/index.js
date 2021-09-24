@@ -7,7 +7,7 @@ import SEO from "../components/SEO"
 const BlogIndex = () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Welcome to my digital garden!" tagline="Follow along with my journey and notes"/>
       <About />
       <div>
         <h2 className="text-2xl mb-5 text-green-900 dark:text-green-400">
