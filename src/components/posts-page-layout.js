@@ -19,11 +19,12 @@ const githubUrl =
   "https://github.com/jenkens-dev/the-learning-project/blob/master/content/posts/"
 
 const PageTemplate = ({ data: { mdx } }) => {
+  const tagline = mdx.frontmatter.tags.map(tag => `#${tag}`).join(' ')
   return (
     <Layout>
       <SEO
         title={mdx.frontmatter.title}
-        tags={mdx.frontmatter.tags}
+        tagline={tagline}
         description={mdx.excerpt}
         pathname={mdx.slug}
         article={true}
