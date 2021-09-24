@@ -5,7 +5,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/Layout"
 import CodeBlock from "../components/CodeBlock"
 import SEO from "../components/SEO"
-import getShareImage from '@jlengstorf/get-share-image';
 
 const components = {
   code: CodeBlock,
@@ -20,28 +19,14 @@ const githubUrl =
   "https://github.com/jenkens-dev/the-learning-project/blob/master/content/posts/"
 
 const PageTemplate = ({ data: { mdx } }) => {
-  const socialImage = getShareImage({
-    title: mdx.frontmatter.title,
-    tagline: mdx.frontmatter.tags.map(tag => `#${tag}`).join(' '),
-    cloudName: 'jenken',
-    imagePublicID: 'blog-post-card_hrvroi',
-    titleExtraConfig: '_line_spacing_-10',
-    textColor: "FFFFFF",
-    titleFont: "montserrat",
-    taglineFont: "montserrat",
-    textLeftOffset: 520,
-    titleBottomOffset: 324,
-    taglineTopOffset: 375
-  });
-
   return (
     <Layout>
       <SEO
         title={mdx.frontmatter.title}
+        tagline={mdx.frontmatter.tags}
         description={mdx.excerpt}
         pathname={mdx.slug}
         article={true}
-        socialImage={socialImage}
       />
       <div className="markdown flex flex-col items-center">
         <h1 className="text-3xl mt-6 font-semibold text-green-900 dark:text-green-400">
