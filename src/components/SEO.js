@@ -17,7 +17,7 @@ const SEO = ({ title, tagline, description, image, article, pathname }) => {
 
   const socialImage = getShareImage({
     title: title ?? defaultTitle,
-    tagline: tagline.map(tag => `#${tag}`).join(' ') || defaultDescription,
+    tagline: tagline?.map(tag => `#${tag}`).join(' ') || defaultDescription,
     cloudName: 'jenken',
     imagePublicID: 'blog-post-card_hrvroi',
     titleExtraConfig: '_line_spacing_-10',
