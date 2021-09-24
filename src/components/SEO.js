@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import getShareImage from '@jlengstorf/get-share-image';
 
-const SEO = ({ title, tagline, description, image, article, pathname }) => {
+const SEO = ({ title, tagline, description, image, article, pathname, tags }) => {
   const { site } = useStaticQuery(query)
 
   const {
@@ -17,7 +17,7 @@ const SEO = ({ title, tagline, description, image, article, pathname }) => {
 
   const socialImage = getShareImage({
     title: title ?? defaultTitle,
-    tagline: tagline?.map(tag => `#${tag}`).join(' ') || defaultDescription,
+    tagline: tagline || tags.map(tag => `#${tag}`).join(' '), 
     cloudName: 'jenken',
     imagePublicID: 'blog-post-card_hrvroi',
     titleExtraConfig: '_line_spacing_-10',

@@ -21,7 +21,7 @@ const Articles = ({ data }) => {
 
   return (
     <Layout>
-      <SEO pathname="articles" />
+      <SEO tagline="" pathname="articles" />
       <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
         <input
           type="text"
