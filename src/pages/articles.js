@@ -21,7 +21,7 @@ const Articles = ({ data }) => {
 
   return (
     <Layout>
-      <SEO tagline="" pathname="articles" />
+      <SEO title="Welcome to my digital garden!" tagline="Follow along with my journey and notes" pathname="articles" />
       <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
         <input
           type="text"
