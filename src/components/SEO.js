@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import getShareImage from '@jlengstorf/get-share-image';
 
-const SEO = ({ title, tagline, description, image, article, pathname }) => {
+const SEO = ({ title, tagline, description, article, pathname }) => {
   const { site } = useStaticQuery(query)
 
   const {
