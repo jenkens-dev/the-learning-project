@@ -18,6 +18,12 @@ const NavBar = () => {
         >
           All Posts
         </Link>
+        <Link
+          className="ml-4 text-green-900 dark:text-green-400"
+          to="/resources"
+        >
+          Resources
+        </Link>
       </div>
     </nav>
   )
