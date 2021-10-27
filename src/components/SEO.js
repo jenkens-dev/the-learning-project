@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import getShareImage from "@jlengstorf/get-share-image"
 
-const SEO = ({ title, tagline, description, article, pathname }) => {
+const SEO = ({ title, tagline, description, article = false, pathname }) => {
   const { site } = useStaticQuery(query)
 
   const {
@@ -73,15 +72,3 @@ const query = graphql`
 `
 
 export default SEO
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  article: PropTypes.bool,
-}
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  article: false,
-}

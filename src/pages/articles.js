@@ -28,6 +28,7 @@ const Articles = ({ data }) => {
       />
       <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
         <input
+          autocomplete="off"
           type="text"
           id="articleSearchbox"
           placeholder="Search articles"
@@ -40,9 +41,9 @@ const Articles = ({ data }) => {
         </label>
       </div>
       {articles.length === 0 ? (
-        <div className="text-3xl text-green-900 dark:text-green-400">
+        <span className="text-3xl text-green-900 dark:text-green-400">
           Sorry no articles found!
-        </div>
+        </span>
       ) : (
         articles.map(({ node }) => <ArticleBlurb node={node} key={node.id} />)
       )}

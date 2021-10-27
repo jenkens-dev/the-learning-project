@@ -9,7 +9,7 @@ import SEO from "../components/SEO"
 const components = {
   code: CodeBlock,
   wrapper: props => (
-    <div>
+    <div className="w-full">
       <main {...props} />
     </div>
   ),
