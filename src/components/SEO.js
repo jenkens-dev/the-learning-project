@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import getShareImage from '@jlengstorf/get-share-image';
+import getShareImage from "@jlengstorf/get-share-image"
 
-const SEO = ({ title, tagline, description, article, pathname }) => {
+const SEO = ({ title, tagline, description, article = false, pathname }) => {
   const { site } = useStaticQuery(query)
 
   const {
@@ -16,17 +15,17 @@ const SEO = ({ title, tagline, description, article, pathname }) => {
 
   const socialImage = getShareImage({
     title: title || defaultTitle,
-    tagline, 
-    cloudName: 'jenken',
-    imagePublicID: 'blog-post-card_hrvroi',
-    titleExtraConfig: '_line_spacing_-10',
+    tagline,
+    cloudName: "jenken",
+    imagePublicID: "blog-post-card_hrvroi",
+    titleExtraConfig: "_line_spacing_-10",
     textColor: "FFFFFF",
     titleFont: "montserrat",
     taglineFont: "montserrat",
     textLeftOffset: 520,
     titleBottomOffset: 324,
-    taglineTopOffset: 375
-  });
+    taglineTopOffset: 375,
+  })
 
   const seo = {
     title: title || defaultTitle,
@@ -73,15 +72,3 @@ const query = graphql`
 `
 
 export default SEO
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  article: PropTypes.bool,
-}
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  article: false,
-}
