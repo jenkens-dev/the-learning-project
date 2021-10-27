@@ -28,6 +28,7 @@ const Articles = ({ data }) => {
       />
       <div className="max-w-lg bg-white shadow p-2 mb-8 rounded mx-auto">
         <input
+          autocomplete="off"
           type="text"
           id="articleSearchbox"
           placeholder="Search articles"
