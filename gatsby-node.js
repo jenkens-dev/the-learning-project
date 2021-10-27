@@ -4,9 +4,7 @@ const path = require("path")
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  // you only want to operate on `Mdx` nodes. If you had content from a
-  // remote CMS you could also check to see if the parent node was a
-  // `File` node here
+  // you only want to operate on `Mdx` nodes.
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
 
@@ -15,9 +13,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: "slug",
       // Individual MDX node
       node,
-      // Generated value based on filepath with "blog" prefix. you
-      // don't need a separating "/" before the value because
-      // createFilePath returns a path with the leading "/".
+      // Generated value based on filepath with "blog" prefix.
       value: `/blog${value}`,
     })
   }
@@ -53,7 +49,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   posts.forEach(({ node }, index) => {
     createPage({
       // This is the slug you created before
-      // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
       component: path.resolve(`./src/components/posts-page-layout.js`),
