@@ -46,8 +46,8 @@ import { useSelector, useDispatch } from "react-redux"
 import { INCREASE_VOTE as increaseVote } from "../actions"
 
 const dispatch = useDispatch()
-const animes = useSelector(state => state.animes)
-;<button onClick={() => dispatch(increaseVote)}>Increase Vote</button>
+const animes = useSelector(state => state.animes);
+<button onClick={() => dispatch(increaseVote)}>Increase Vote</button>
 ```
 
 We can use the useSelector hook to access the state of the store, instead of mapStateToProps. useSelector takes the current state of the store as a parameter and returns a piece of state you want. A potential hurdle with useSelector is that it uses strict equality, different from the previous mapStateToProps, which checked if the fields changed. This can cause potential problems when trying to return an object from useSelector, so it's best practice to call useSelector once for each value of your state. Instead of using mapDispatchToProps we can use the useDispatch hook and individually dispatch any actions we need to the reducer. To get the overall picture of hooks versus non-hooks here is the same component written in both ways.
