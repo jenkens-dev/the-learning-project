@@ -1,6 +1,31 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import ResourceList from "../components/ResourceList"
+
+const ReactResources = [
+  {
+    topic: "React",
+    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
+    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
+  },
+]
+
+const TypeScriptResources = [
+  {
+    topic: "React",
+    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
+    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
+  },
+]
+
+const SystemDesignResources = [
+  {
+    topic: "React",
+    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
+    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
+  },
+]
 
 const ResourcesPage = () => {
   return (
@@ -14,18 +39,9 @@ const ResourcesPage = () => {
         directory. I've personally read/watched all these resources if that
         matters to you!
       </p>
-      <h2 className="text-2xl text-green-900 dark:text-green-400">React</h2>
-      <ul className="inline-block list-disc list-inside">
-        <li>
-          <a
-            className="linkUnderline"
-            href="https://kyleshevlin.com/comparing-use-ref-and-use-state"
-          >
-            Comparing `useRef` and `useState` by Kyle Shevlin
-          </a>
-        </li>
-      </ul>
-
+      {ReactResources.map((resource, index) => {
+        return <ResourceList key={index} resource={resource} />
+      })}
       <h2 className="text-2xl text-green-900 dark:text-green-400">
         TypeScript
       </h2>
