@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "The Learning Project",
-    description: "A place I share what I've been learning and write about my growth",
+    description:
+      "A place I share what I've been learning and write about my growth",
     url: "https://www.jenkens.dev/",
     image: "/favicon.ico",
     twitterUsername: "@jenkens_",
@@ -14,12 +15,7 @@ module.exports = {
         path: `${__dirname}/content/posts/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.md`, `.mdx`],
-      },
-    },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
