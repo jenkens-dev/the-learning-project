@@ -18,24 +18,28 @@ const components = {
 const githubUrl =
   "https://github.com/jenkens-dev/the-learning-project/blob/master/content/posts/"
 
-const PageTemplate = ({ data: { mdx } }) => {
-  const tagline = mdx.frontmatter.tags.map(tag => `#${tag}`).join(" ")
+const PageTemplate = ({
+  data: {
+    mdx: { frontmatter, excerpt, slug, body },
+  },
+}) => {
+  const tagline = frontmatter.tags.map(tag => `#${tag}`).join(" ")
   return (
     <Layout>
       <SEO
-        title={mdx.frontmatter.title}
+        title={frontmatter.title}
         tagline={tagline}
-        description={mdx.excerpt}
-        pathname={mdx.slug}
+        description={excerpt}
+        pathname={slug}
         article={true}
       />
       <div className="markdown flex flex-col items-center">
         <h1 className="text-3xl mt-6 font-semibold text-green-900 dark:text-green-400">
-          {mdx.frontmatter.title}
+          {frontmatter.title}
         </h1>
         <div className="w-full flex flex-col items-end">
           <div>
-            {mdx.frontmatter.tags.map((tag, index) => {
+            {frontmatter.tags.map((tag, index) => {
               return (
                 <span
                   key={index}
@@ -46,16 +50,16 @@ const PageTemplate = ({ data: { mdx } }) => {
               )
             })}
           </div>
-          <a className="block" href={`${githubUrl}${mdx.slug}.mdx`}>
+          <a className="block" href={`${githubUrl}${slug}.mdx`}>
             Edit
           </a>
         </div>
         <MDXProvider components={components}>
-          <MDXRenderer className="flex flex-col">{mdx.body}</MDXRenderer>
+          <MDXRenderer className="flex flex-col">{body}</MDXRenderer>
         </MDXProvider>
         Enjoyed the article?
         <a
-          href={`https://twitter.com/intent/tweet?text=${mdx.frontmatter.title}&url=https://www.jenkens.dev/blog/${mdx.slug}&via=jenkens_`}
+          href={`https://twitter.com/intent/tweet?text=${frontmatter.title}&url=https://www.jenkens.dev/blog/${slug}&via=jenkens_`}
           target="_blank"
           rel="noreferrer"
         >
