@@ -3,29 +3,40 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import ResourceList from "../components/ResourceList"
 
-const ReactResources = [
-  {
-    topic: "React",
-    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
-    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
-  },
-]
+const ReactResources = {
+  topic: "React",
+  articles: [
+    {
+      href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
+      linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
+    },
+  ],
+}
 
-const TypeScriptResources = [
-  {
-    topic: "React",
-    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
-    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
-  },
-]
+const TypeScriptResources = {
+  topic: "TypeScript",
+  articles: [
+    {
+      href:
+        "https://egghead.io/lessons/react-write-your-first-react-typescript-component",
+      linkText: "Write your first React TypeScript Component by Shawn Wang",
+    },
+    {
+      href: "https://kentcdodds.com/blog/typescript-function-syntaxes",
+      linkText: "TypeScript Function Syntaxes by Kent C. Dodds",
+    },
+  ],
+}
 
-const SystemDesignResources = [
-  {
-    topic: "React",
-    href: "https://kyleshevlin.com/comparing-use-ref-and-use-state",
-    linkText: "Comparing `useRef` and `useState` by Kyle Shevlin",
-  },
-]
+const SystemDesignResources = {
+  topic: "System Design",
+  articles: [
+    {
+      href: "https://github.com/donnemartin/system-design-primer",
+      linkText: "The System Design Primer",
+    },
+  ],
+}
 
 const ResourcesPage = () => {
   return (
@@ -39,43 +50,18 @@ const ResourcesPage = () => {
         directory. I've personally read/watched all these resources if that
         matters to you!
       </p>
-      {ReactResources.map((resource, index) => {
-        return <ResourceList key={index} resource={resource} />
-      })}
-      <h2 className="text-2xl text-green-900 dark:text-green-400">
-        TypeScript
-      </h2>
-      <ul className="inline-block list-disc list-inside">
-        <li>
-          <a
-            className="linkUnderline"
-            href="https://egghead.io/lessons/react-write-your-first-react-typescript-component"
-          >
-            Write your first React TypeScript Component by Shawn Wang
-          </a>
-        </li>
-        <li>
-          <a
-            className="linkUnderline"
-            href="https://kentcdodds.com/blog/typescript-function-syntaxes"
-          >
-            TypeScript Function Syntaxes by Kent C. Dodds
-          </a>
-        </li>
-      </ul>
-      <h2 className="text-2xl text-green-900 dark:text-green-400">
-        System Design
-      </h2>
-      <ul className="inline-block list-disc list-inside">
-        <li>
-          <a
-            className="linkUnderline"
-            href="https://github.com/donnemartin/system-design-primer"
-          >
-            The System Design Primer
-          </a>
-        </li>
-      </ul>
+      <ResourceList
+        topic={ReactResources.topic}
+        articles={ReactResources.articles}
+      />
+      <ResourceList
+        topic={TypeScriptResources.topic}
+        articles={TypeScriptResources.articles}
+      />
+      <ResourceList
+        topic={SystemDesignResources.topic}
+        articles={SystemDesignResources.articles}
+      />
     </Layout>
   )
 }
