@@ -15,10 +15,10 @@ const ResourcesPage = () => {
       <h1 className="text-3xl text-green-900 dark:text-green-400">Resources</h1>
       <p>
         Throughout my coding journey I've come across a lot of great resources.
-        They end up saved in so many different spots that it's hard to find them
-        again if I want to share them with others. Thus I've created this little
-        directory. I've personally read/watched all these resources if that
-        matters to you!
+        They end up getting saved in so many different spots that it's hard to
+        find them again. It's impossible to find them all to share with others.
+        Thus I've created this little directory. I've personally read/watched
+        all these resources if that matters to you!
       </p>
       <ResourceList
         topic={ReactResources.topic}
