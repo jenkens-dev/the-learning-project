@@ -47,7 +47,6 @@
   }
 
   /* Links */
-
   .dark .markdown a {
     text-decoration: underline;
     /* text-green-400 */
@@ -92,5 +91,13 @@
   /* Code Blocks */
   .markdown pre {
     @apply my-2 mx-auto w-full;
+  }
+
+  .markdown blockquote {
+    @apply bg-white p-3 border-green-500 border-l-4 mb-4 text-black;
+  }
+
+  .markdown blockquote p {
+    @apply mb-0;
   }
 }

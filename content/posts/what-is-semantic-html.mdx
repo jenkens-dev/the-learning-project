@@ -1,0 +1,40 @@
+---
+title: "What is Semantic HTML?"
+date: "2021-11-02"
+status: 👩‍🌾
+tags: ["Learning", "Accessibility", "Notes"]
+---
+
+- what is the purpose or role of that HTML element? 
+- there are so many different elements
+    - how do you choose what to use? 
+- want to use the right element for the job
+- sometimes we choose elements based on what they do or how they look instead of the semantic meaning behind the element
+    - using lots of divs or adding more than 1 h1 element because of the style that it looks like 
+    - you can also do the opposite and use something like a span and style it to look exactly like a heading but that doesn't give any semantic value
+- html elements should be chosen to represent the data that's going to be displayed and not based on it's default styling
+- semantic markup helps improve
+    - SEO
+    - navigating a website with a screenreader
+- There are about 100 semantic elements 
+- Easy to forget how many different elements there are and hard to learn all of them at the beginning
+- Even while writing this article I found areas where I can improve
+    - I have a component called `ArticleBlurb` which was using a `div` instead of the more semantic `article`
+    - I was also using an `h3` tag when there were no `h2` tags. Ideally you don't want to skip heading elements
+
+A semantic element is an element with a descriptive 
+
+```html
+<div> <!-- A more semantic tag to use would be <article> -->
+    <Link to={fields.slug}>
+    <h3>{frontmatter.title}</h3> <!-- Use h2 instead of skipping to h3 -->
+    <span>{frontmatter.date}</span>
+    <span>:{frontmatter.status}</span>
+    <p>{excerpt}</p>
+    </Link>
+</div>
+```
+
+Resources: 
+- [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- [MDN Semantics article](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html)
