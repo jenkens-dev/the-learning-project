@@ -46,6 +46,10 @@
     @apply text-xl my-6 font-semibold text-green-900 dark:text-green-400;
   }
 
+  .markdown h3 {
+    @apply text-lg my-6 font-semibold text-green-900 dark:text-green-400;
+  }
+
   /* Links */
   .dark .markdown a {
     text-decoration: underline;
