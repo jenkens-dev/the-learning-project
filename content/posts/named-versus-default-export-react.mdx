@@ -1,0 +1,66 @@
+---
+title: "Named versus Default exports"
+date: "2021-11-10"
+status: 👩‍🌾
+tags: ["Learning", "React"]
+---
+
+- A file can't have more than 1 default export but it can have multiple named exports
+- How you import a component depends on how you define the export 
+    - when you use a default export you can import the component with a different name
+    - if you use a named export, the name has to be the same with export and import 
+- You can mix and match and even a single file can have a default export and a named export 
+    - normally thing isn't done because you want to keep things consistent
+
+During a technical interview I realized I didn't really know the difference between named and default exports and imports. It's not that this concept was tricky to me but mostly that I never bothered to look it up. I just copied whatever was in the codebase at the time or let my rebuilt snippets dictate what practice I was going to follow. I'm sure I even mixed and matched in the same codebase. 
+
+So I decided to look this up and write an article to teach myself and anyone else that was curious
+
+## Default exports 
+To export default a React component for example we use the `default` keyword
+
+```jsx
+// Navbar.js
+const Navbar = () => {
+    return <nav></nav>
+}
+
+export default Navbar
+```
+
+Then if I want to import a default export in another file I can do it like so. Because a file can only have 1 default export when we import it we can also call it whatever we want. 
+
+```jsx
+// Layout.js
+import Navbar from "./Navbar"
+
+// import with whatever name you want when using default export
+import ExampleDefaultNavbar from "./Navbar"
+```
+
+
+## Named exports
+When using named exports you can export as many things as you want. 
+```jsx
+// Navbar.js
+export const Navbar = () => {
+    return <nav></nav>
+}
+
+export const NavbarLink = () = {
+    return <a></a>
+}
+```
+
+```jsx
+// Layout.js
+import { Navbar, NavbarLink } from "./Navbar"
+
+// Rename an export with the as keyword
+import { Navbar as ExampleNamedNavbar } from "./Navbar"
+```
+With named exports you need to use the same variable name when you import and export. If you want to rename the component you have to use the `as` keyword. We also have to use `{}` in the import statement. 
+
+
+## When to use
+You can mix and match in the same codebase and even the same file. A file can have 1 default export and multiple named exports or a bunch of named exports. Personally I don't think there's a best answer. You should decide as a team and stick to that across your components. One minor thing that's helpful is that when using named exports the name is normally consistent across files. Unless you rename it if someone defines a named export for example as `Navbar` whenever you import it, it should use `Navbar`. But if you use a default export, one person could import it as `Navbar`, but another person can import it as `NavBar` and even another person can import is as `HeadNavBar`. This could cause a bit of confusion. 

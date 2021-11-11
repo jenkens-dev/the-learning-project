@@ -104,4 +104,8 @@
   .markdown blockquote p {
     @apply mb-0;
   }
+
+  .markdown code {
+    @apply bg-gray-100 p-1 text-black;
+  }
 }
