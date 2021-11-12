@@ -5,19 +5,12 @@ status: 👩‍🌾
 tags: ["Learning", "React"]
 ---
 
-- A file can't have more than 1 default export but it can have multiple named exports
-- How you import a component depends on how you define the export 
-    - when you use a default export you can import the component with a different name
-    - if you use a named export, the name has to be the same with export and import 
-- You can mix and match and even a single file can have a default export and a named export 
-    - normally thing isn't done because you want to keep things consistent
+During a technical interview, I realized I was unsure of the difference between named and default exports and imports. It's not that this concept was tricky to me but mostly that I never bothered to look it up. I just copied whatever was in the codebase at the time or let my prebuilt snippets dictate what practice I was going to follow. I'm sure I even mixed and matched in the same codebase. 
 
-During a technical interview I realized I didn't really know the difference between named and default exports and imports. It's not that this concept was tricky to me but mostly that I never bothered to look it up. I just copied whatever was in the codebase at the time or let my rebuilt snippets dictate what practice I was going to follow. I'm sure I even mixed and matched in the same codebase. 
+So I decided to look this up and write an article to teach myself and anyone else that was curious.
 
-So I decided to look this up and write an article to teach myself and anyone else that was curious
-
-## Default exports 
-To export default a React component for example we use the `default` keyword
+## Default exports
+Files are only allowed to have a single default export.  To default export a React component for example we use the `default` keyword. Below is how I normally use default exports and probably to most common syntax. 
 
 ```jsx
 // Navbar.js
@@ -28,7 +21,19 @@ const Navbar = () => {
 export default Navbar
 ```
 
-Then if I want to import a default export in another file I can do it like so. Because a file can only have 1 default export when we import it we can also call it whatever we want. 
+Another way to write that is: 
+ 
+```jsx
+// Navbar.js
+export default function Navbar() {
+    return <nav></nav>
+}
+```
+You'll notice that this way you can define the function and export the component in one line. This is convenient but you can't use the arrow function syntax which is important for the `this` keyword in React. 
+
+So if you want to use a default export I would suggest using the first code block syntax.
+
+Now let's look at how to import a default export in another file. 
 
 ```jsx
 // Layout.js
@@ -37,10 +42,11 @@ import Navbar from "./Navbar"
 // import with whatever name you want when using default export
 import ExampleDefaultNavbar from "./Navbar"
 ```
-
+One interesting thing you can do when importing a default export component is to call it whatever you like. Notice in the example above that you can import the component under the name `ExampleDefaultNavbar` instead. A similar thing can be done with named exports but we'll talk about the difference in syntax later. 
 
 ## Named exports
-When using named exports you can export as many things as you want. 
+Files are only allowed to have a single default export but they can have as many named exports as you want.
+
 ```jsx
 // Navbar.js
 export const Navbar = () => {
@@ -51,16 +57,25 @@ export const NavbarLink = () = {
     return <a></a>
 }
 ```
+Above we have a single file `Navbar.js` with two different named exports, `Navbar` and `NavbarLink`.  I've found named exports are a popular choice when it comes to utility files. 
+
+The import syntax for named exports is a bit different from default exports.
 
 ```jsx
 // Layout.js
 import { Navbar, NavbarLink } from "./Navbar"
 
 // Rename an export with the as keyword
-import { Navbar as ExampleNamedNavbar } from "./Navbar"
+import { Navbar as ExampleNamedNavbar, NavbarLink } from "./Navbar"
 ```
-With named exports you need to use the same variable name when you import and export. If you want to rename the component you have to use the `as` keyword. We also have to use `{}` in the import statement. 
+With named exports, you need to use the same variable name when you import and export, and you need to wrap the variable in `{}`. If you want to rename the component you have to use the `as` keyword. 
 
 
 ## When to use
-You can mix and match in the same codebase and even the same file. A file can have 1 default export and multiple named exports or a bunch of named exports. Personally I don't think there's a best answer. You should decide as a team and stick to that across your components. One minor thing that's helpful is that when using named exports the name is normally consistent across files. Unless you rename it if someone defines a named export for example as `Navbar` whenever you import it, it should use `Navbar`. But if you use a default export, one person could import it as `Navbar`, but another person can import it as `NavBar` and even another person can import is as `HeadNavBar`. This could cause a bit of confusion. 
+As with a lot of things in programming, the answer is it depends. But the good news is, both are fine. You could even mix and match in the same codebase or even the same file. Although I don't suggest this since it can get a bit confusing. You should decide as a team and stick to that across your components. 
+
+One minor thing that can one above the other is that when using named exports the name is normally consistent across files. As seen above, when you import a component that uses `export default` there isn't a strict requirement when it comes to naming. 
+
+That means that you could import a component that's been default exported from the `Navbar.js` file as `Navbar`. But someone else might import that same component under the name `NavBar` and so on. 
+
+While this isn't a big deal and it shouldn't break anything it can be a bit confusing and lead to inconsistencies across the codebase. 
