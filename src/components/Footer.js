@@ -4,7 +4,7 @@ import { IconContext } from "react-icons"
 
 const Footer = () => {
   return (
-    <div className="flex flex-shrink-0 py-3">
+    <footer className="flex flex-shrink-0 py-3">
       <IconContext.Provider
         value={{ className: "w-7 h-7 text-githubGray dark:text-white" }}
       >
@@ -21,7 +21,7 @@ const Footer = () => {
           <span className="sr-only">Twitter</span>
         </a>
       </IconContext.Provider>
-    </div>
+    </footer>
   )
 }
 
