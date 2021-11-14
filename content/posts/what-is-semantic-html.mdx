@@ -5,29 +5,34 @@ status: 👩‍🌾
 tags: ["Learning", "Accessibility", "Notes"]
 ---
 
-- what is the purpose or role of that HTML element? 
-- there are so many different elements
-    - how do you choose what to use? 
-- want to use the right element for the job
-- sometimes we choose elements based on what they do or how they look instead of the semantic meaning behind the element
-    - using lots of divs or adding more than 1 h1 element because of the style that it looks like 
-    - you can also do the opposite and use something like a span and style it to look exactly like a heading but that doesn't give any semantic value
-- html elements should be chosen to represent the data that's going to be displayed and not based on it's default styling
-- semantic markup helps improve
-    - SEO
-    - navigating a website with a screenreader
-- There are about 100 semantic elements 
-- Easy to forget how many different elements there are and hard to learn all of them at the beginning
-- Even while writing this article I found areas where I can improve
-    - I have a component called `ArticleBlurb` which was using a `div` instead of the more semantic `article`
-    - I was also using an `h3` tag when there were no `h2` tags. Ideally you don't want to skip heading elements
+When I was job searching I had to build some UIs with React. When I was building them I realized I didn't know the most ideal element to use. I tended to lean on using a lot of divs with the prefice that I would come back and clean them up and this wouldn't be the code I would ideally submit in a PR. I knew about semantic but I had never really sat down to learn about it. All I knew was that divs aren't always the most ideal choice. 
 
-A semantic element is an element with a descriptive 
+I still have a lot of things to learn but I figured I would write this article in the form of notes. 
+
+Semantics in HTML refers to the purpose of or role of that specific element. For example we know an `h1` element is the most important heading element. Just from the tag we know what to expect from this element. HTML tags like `h1` and `nav` are a lot more semantic than things like `div` and `span`. 
+
+Anything information can be put in a `div` but when you make the correct semantic choice to use a `nav` it gives a lot more information. We want to use the right element for the job. Thinking about the data that we're going to display can make the choice between different elements easier. It's more important to focus on what the data is that what the styling will look like when choicing HTML elements. 
+
+When I was first learning I tended to use the tags I knew or the tags that would look the best. I used to use a `span` tag and then style it to look the way I wanted instead of using a more semantic element like `h2`.
+
+## Accessibility and SEO
+The two advantages of semantic markup I've read about are accessibility and SEO. Screen readers use semantic markup to help navigate the page. Screen readers can list all the headings on a page, but if we don't use the proper semantic markup that feature is lost. The HTML elements on a page provide meaning to assisitve technologies, so we should do our best when making websites. 
+
+Certain HTML elements come with added accessibility benefits. A `button` comes with built-in keyboard accessbility so users can Tab to buttons and active them using Enter. Those built in features are lost to us if we use a `span` or `div`. 
+
+Search engines crawl the throughout the web and index the content. A website with good semantic html will be more visible during search results than the same content on a website with lots of `divs`. According to this [MDN article](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
+
+> _search engines give more importance to keywords inside headings, links, etc. than keywords included in non-semantic `divs`, etc., so your documents will be more findable by customers._
+
+## Iterate like all good developers
+I don't want to sit here any make you think I understand all of this and never make any mistakes. One of my favorite things about being a developer is making mistakes and then learning for the future. You can always build and iterate on your code. So while I was learning about semantic html and researching for this article I found a lot of mistakes in this very digital garden! 
+
+I have a component called `ArticleBlurb`. On my "/articles" route I display a small block for each of my articles that includes the title, date, and status of the article. This is what the `ArticleBlurb` is in charge of displaying. When I looked at the code I realized I was using a `div`. A better way of writing it would be to use the `article` tag. 
 
 ```html
 <div> <!-- A more semantic tag to use would be <article> -->
     <Link to={fields.slug}>
-    <h3>{frontmatter.title}</h3> <!-- Use h2 instead of skipping to h3 -->
+    <h3>{frontmatter.title}</h3>
     <span>{frontmatter.date}</span>
     <span>:{frontmatter.status}</span>
     <p>{excerpt}</p>
@@ -35,6 +40,12 @@ A semantic element is an element with a descriptive
 </div>
 ```
 
+Another good example of semantic improvements I made to this site is that my `Footer` component was also using a `div` is the outer most element instead of the more semantic `footer`. 
+
+I never realized how many semantic elements there were! If you're looking for a place to start I think the best place to look is `header`, `footer`, `nav`. If you're using a `div` for any of these sections of your website these are nice upgrades and hopefully approachable as you learn more semantic elements and how they can be used! 
+
+
 Resources: 
 - [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 - [MDN Semantics article](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html)
+- [MDN HTML: A good basis for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
