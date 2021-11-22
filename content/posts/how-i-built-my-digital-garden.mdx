@@ -34,3 +34,76 @@ Would you like to install a styling system?
 Would you like to install additional features with other plugins?
 - Use the arrow keys to navigate to "Add Markdown and MDX support", hit space to select, use the arrow keys to navigate to "Done" and then hit Enter
 Enter one more time to get finalize the creation! 
+
+Hopefully if everything went well you, after you run `npm start` and open up localhost you should see something like this! 
+<img src="/starterGatsbySite.png" alt="Screenshot of what the Gatsby website should look like at the start. Text says Congrats - you just made a Gatsby site, and it includes 7 little blog articles with blurbs" />
+
+First thing I did was clean up a lot of this code that I didn't need. 
+
+Now the code in `index.js` looks like: 
+
+```jsx
+import * as React from "react";
+
+const IndexPage = () => {
+  return (
+    <main>
+      <title>Digital Garden Starter</title>
+      <h1>Welcome to my Digital Garden!</h1>
+    </main>
+  );
+};
+
+export default IndexPage;
+```
+
+Now we have a quick home page but what about creating other pages? We can create other pages quickly by creating a component inside the `src/pages` directory. So we'll create a new file `src/pages/articles.js` and Gatsby will automatically create a page at "/articles" that displays this component. 
+
+```jsx
+import * as React from "react";
+
+const ArticlesPage = () => {
+  return (
+    <main>
+      <title>Articles</title>
+      <h1>Feel free to peruse all the articles in my garden!</h1>
+    </main>
+  );
+};
+
+export default ArticlesPage;
+```
+
+After saving this new page we can navigate to `localhost:8000/articles` and see our component! Because we have two pages now and want to have a light/dark mode toggle later we can just create a navigation bar now to easily switch between pages. 
+
+I like to keep my components organized so I'll create a `src/components` folder and then create the file for `Navbar.js`. 
+
+```jsx
+import * as React from "react";
+import { Link } from "gatsby";
+
+const Navbar = () => {
+  return (
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/articles">Articles</Link>
+    </nav>
+  );
+};
+
+export default Navbar;
+```
+
+The biggest thing to point out in our `Navbar` component is the `Link` component we are using from Gatsby. The `Link` component that Gatsby gives us is very similar to an `<a>`. The `to` prop is similar to the `href` attribute on `<a>` tags. But one of the benefits to using the `Link` component is that it gives us a performance boost. When one of these `Link` tags is in view the resources for that specific page are requested. Then when you navigate to that page it loads much faster than if the resources were requested on click. 
+
+`Link` components are used for linking between pages **within** your site. That's why they are perfect for the `Navbar`, but if I wanted to link to say MDN docs we would still want to use an `<a>` tag. 
+
+After we've built the `Navbar` component and imported it into `index.js` we should see a *beautiful* nav bar that lets us easily navigate to the articles page. 
+
+<img src="/dgStarterNavbar.png" alt="Starter Gatsby site that shows a navbar with two links: Home and Articles. And a header with text that says Welcome to my Digital Garden!" />
+
+If we click the "Articles" link we should be routed to `localhost:8000/articles`.
+
+Because we just imported the `Navbar` into our `index.js` and not our `articles.js` page we no longer see the Navbar. We could import the `Navbar` component into the articles page but this can quickly get tedious as we start to have more pages or more components that are repeated throughout pages like a footer. 
+
+So we'll create a custom `Layout` component that will be responsible for displaying components that are shared throughout multiple pages. 
