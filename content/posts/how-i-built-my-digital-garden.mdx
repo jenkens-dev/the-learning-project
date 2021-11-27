@@ -107,3 +107,105 @@ If we click the "Articles" link we should be routed to `localhost:8000/articles`
 Because we just imported the `Navbar` into our `index.js` and not our `articles.js` page we no longer see the Navbar. We could import the `Navbar` component into the articles page but this can quickly get tedious as we start to have more pages or more components that are repeated throughout pages like a footer. 
 
 So we'll create a custom `Layout` component that will be responsible for displaying components that are shared throughout multiple pages. 
+
+```jsx
+import * as React from "react";
+import Navbar from "./Navbar";
+
+const Layout = ({ pageTitle, children }) => {
+  return (
+    <div>
+      <title>{pageTitle}</title>
+      <Navbar />
+      <main>{children}</main>
+    </div>
+  );
+};
+export default Layout;
+```
+
+In the `Layout` component we can take advantage of the `children` props in order to wrap our pages. Now we can import this `Layout` component into our pages to see the `Navbar` on all the pages and any other repeat components we end up adding to `Layout`
+
+```jsx
+import * as React from "react";
+import Layout from "../components/Layout";
+
+const ArticlesPage = () => {
+  return (
+    <Layout pageTitle="Articles">
+      <h1>Feel free to peruse all the articles in my garden!</h1>
+    </Layout>
+  );
+};
+
+export default ArticlesPage;
+```
+
+One of the great reasons of creating a digital garden with Gatsby is we can create all our content in Markdown and keep it in our local filesystem and access that data through GraphQL and gatsby plugins. 
+
+We can write GraphQL queries inside specific components to query data we want to use. When Gatsby builds the site, it will find all those GraphQL queries, run them, and pass that data into the the component. 
+
+We can create an articles folder at the top of the directory to hold our of the content we are going to create. To access these files we will need to use the Gatsby plugin, `gatsby-source-filesystem` 
+- `npm install gatsby-source-filesystem`
+
+```
+plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "articles",
+        path: `${__dirname}/articles`,
+      },
+    },
+  ],
+```
+
+Now we have the plugin and we've pointed it to the folder with all our content. Now we just need to write a GraphQL query to access the data. 
+
+```
+query MyQuery {
+  allFile {
+    nodes {
+      name
+    }
+  }
+}
+``` 
+
+Pulling data into page components is a bit different than pulling data into regular building block components like a Layout component. When we want to access GraphQL data in a page component we create a variable that holds the GraphQL query and then when Gatsby builds the site, it will run that query and pass the data into the page component as a prop called `data`
+
+```jsx
+import * as React from "react";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
+
+const ArticlesPage = ({ data }) => {
+  console.log(data);
+  return (
+    <Layout pageTitle="Articles">
+      <h1>Feel free to peruse all the articles in my garden!</h1>
+      <ul>
+        {data.allFile.nodes.map((node) => (
+          <li key={node.name}>{node.name}</li>
+        ))}
+      </ul>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query {
+    allFile {
+      nodes {
+        name
+      }
+    }
+  }
+`;
+
+export default ArticlesPage;
+```
+
+*Note* If you're following along with this article, make sure you restart your server. I ran into an error saying I couldn't `.map()` over undefined and I assume that's because there was no `data` because the GraphQL query is run on build.
+
+<img src="/dgStarterBlogPostNames.png" alt="Starter Gatsby site that shows a navbar with two links: Home and Articles. A header with text that says Feel free to peruse all the articles in my garden!. And a bullet point list of three articles names" />
