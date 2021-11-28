@@ -273,4 +273,116 @@ const ArticlesPage = ({ data }) => {
 };
 ``` 
 
-Once we add ```<MDXRenderer>{node.body}</MDXRenderer>``` we should see the content of our articles! 
+Once we add ```<MDXRenderer>{node.body}</MDXRenderer>``` we should see the content of our articles! We have all our articles and all their content displayed on one page and while this is okay, it can quickly grow messy. 
+
+One thing we can do is dynamically create an individual page for each of our articles. We can use one page component to create multiple pages. We will utilize Gatsby's **File System Route API**, which lets us "create routes dynamically by naming your page files with special syntax". 
+
+This template file will live in `src/pages/{mdx.slug}.js`. The curly braces are important and indicate the dynamic portion of the route! When determining the naming structure we want to think about what type of node to create pages from and which field from that node should we use as the URL. We haven't used this field yet but within the `allMDX` query there's a field called `slug`. This `slug` field gives us a nice URL and corresponds to the file name of our posts. I called one of the files `first-post.mdx`, so the corresponding URL will be `/first-post`. 
+
+Inside our template page: 
+
+```jsx
+import * as React from 'react'
+import Layout from '../components/layout'
+
+const BlogPost = () => {
+  return (
+    <Layout pageTitle="Super Cool Blog Posts">
+      <p>My blog post contents will go here (eventually).</p>
+    </Layout>
+  )
+}
+
+export default BlogPost
+```
+
+Right now we will hard code everything but eventually all this information will be dynamic and specific to the current article page you're on. But if you go to `/first-post` you should see our page template! 
+
+Alright time to add that dynamic information to the template. For this we will use another GraphQL query to query article information through their specific ids. 
+
+```
+query MyQuery($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+      date(formatString: "MMMM D, YYYY")
+    }
+    body
+  }
+}
+```
+
+Once we add this query to our template file we can display the data similar to what we did in the `ArticlesPage`. Here's what the `{mdx.slug}.js` component should look like: 
+
+```jsx
+import * as React from "react";
+import Layout from "../../components/layout";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+
+const Article = ({ data }) => {
+  return (
+    <Layout pageTitle={data.mdx.frontmatter.title}>
+      <p>{data.mdx.frontmatter.date}</p>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query ($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        date(formatString: "MMMM D, YYYY")
+      }
+      body
+    }
+  }
+`;
+
+export default Article;
+```
+
+Because we are displaying the information of the article in the specific route we don't need to display everything in the `/articles` route anymore. This page should instead be responsible for showing the names of all the articles and linking to those specific article pages. 
+
+```jsx
+import * as React from "react";
+import Layout from "../../components/Layout";
+import { graphql, Link } from "gatsby";
+
+const ArticlesPage = ({ data }) => {
+  return (
+    <Layout pageTitle="Articles">
+      <h1>Feel free to peruse all the articles in my garden!</h1>
+      {data.allMdx.nodes.map((node) => (
+        <article key={node.id}>
+          <h2>
+            <Link to={`/articles/${node.slug}`}>{node.frontmatter.title}</Link>
+          </h2>
+          <p>Posted: {node.frontmatter.date}</p>
+        </article>
+      ))}
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+        }
+        id
+        slug
+      }
+    }
+  }
+`;
+
+export default ArticlesPage;
+```
+
+Since we aren't going to display the content of the article on this page we can remove `MDXRenderer`, as well as replace `body` with `slug` in our GraphQL query. Similar to the `Navbar` we can use Gatsby's `Link` component to link to pages that are within our site, like articles. 
