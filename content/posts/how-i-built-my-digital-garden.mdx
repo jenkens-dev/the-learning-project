@@ -216,3 +216,61 @@ In order to display the information inside our MDX articles we need to go throug
 - Configure the `gatsby-plugin-mdx`, similar to how we had to configure the `gatsby-source-filesystem`
 - Update the GraphQL query we added to `ArticlesPage` to use `allMdx` instead of `allFile`
 - Use the `MDXRenderer` component to display the content inside our MDX articles
+
+When we started this projected we set up "Add Markdown and MDX support" option. So the first step is already all set up for us. If you missed that step you can: `npm install gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react` and add `gatsby-plugin-mdx` to the `plugins` array in `gatsby-config.js`. 
+
+Now that we have the plugin set up we have access to `allMdx` and `mdx` fields in our GraphQL queries. 
+
+```
+query MyQuery {
+  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+      }
+      id
+      body
+    }
+  }
+}
+```
+
+Above you'll see the new query that we want to run. Instead of `allFile` we will use the `allMdx` field to access properties that are *inside* our mdx files. Like in most blogs we will sort the artiles based on the most recent one. We can do that with the `sort` function and accessing the date we set in the frontmatter of the articles. The `nodes` field is used to get each mdx post and from there we can return the data we want. Like all the information in the frontmatter, the id of the article that we will use for things like keys, and the body of the post that we will pass to `MDXRenderer` to display the content. 
+
+```jsx
+<Layout pageTitle="Articles">
+    <h1>Feel free to peruse all the articles in my garden!</h1>
+    {data.allMdx.nodes.map((node) => (
+        <article key={node.id}>
+          <h2>{node.frontmatter.title}</h2>
+          <p>Posted: {node.frontmatter.date}</p>
+        </article>
+    ))}
+</Layout>
+```
+
+Because we changed the graphql query to use `allMdx` we will want to update what we are returning in `ArticlesPage`. We can now utilize all that new data to display more information than just the file name we were displaying before. 
+
+<img src="/dgStarterAllMdx.png" alt="A header with text that says Feel free to peruse all the articles in my garden! Followed my a list of three posts with their respective titles and dates." />
+
+Now we just need to display the actual content that's inside the mdx files with `MDXRenderer`. 
+
+```jsx
+const ArticlesPage = ({ data }) => {
+  return (
+    <Layout pageTitle="Articles">
+      <h1>Feel free to peruse all the articles in my garden!</h1>
+      {data.allMdx.nodes.map((node) => (
+        <article key={node.id}>
+          <h2>{node.frontmatter.title}</h2>
+          <p>Posted: {node.frontmatter.date}</p>
+          <MDXRenderer>{node.body}</MDXRenderer>
+        </article>
+      ))}
+    </Layout>
+  );
+};
+``` 
+
+Once we add ```<MDXRenderer>{node.body}</MDXRenderer>``` we should see the content of our articles! 
