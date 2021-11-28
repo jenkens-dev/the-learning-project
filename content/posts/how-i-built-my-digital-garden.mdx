@@ -209,3 +209,10 @@ export default ArticlesPage;
 *Note* If you're following along with this article, make sure you restart your server. I ran into an error saying I couldn't `.map()` over undefined and I assume that's because there was no `data` because the GraphQL query is run on build.
 
 <img src="/dgStarterBlogPostNames.png" alt="Starter Gatsby site that shows a navbar with two links: Home and Articles. A header with text that says Feel free to peruse all the articles in my garden!. And a bullet point list of three articles names" />
+
+The plugin `gatsby-source-filesystem` allows us to query the names of our files but it can't give us the content of those particular files. For that we will need another plugin called `gatsby-plugin-mdx`. Source plugins like `gatsby-source-filesystem` allow you to query data *about* the file, but not *inside* the file. For that we will need a transformer plugin. 
+
+In order to display the information inside our MDX articles we need to go through a couple of steps. 
+- Configure the `gatsby-plugin-mdx`, similar to how we had to configure the `gatsby-source-filesystem`
+- Update the GraphQL query we added to `ArticlesPage` to use `allMdx` instead of `allFile`
+- Use the `MDXRenderer` component to display the content inside our MDX articles
