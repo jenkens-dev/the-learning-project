@@ -1,4 +1,3 @@
-import React from "react"
 import { Link } from "gatsby"
 import Emoji from "./Emoji"
 
@@ -28,7 +27,8 @@ const About = () => {
         or{" "}
         <a
           className="linkUnderline dark:darkUnderline"
-          href="https://docs.google.com/document/d/1jg6qBShEtZ4OMEPJe33Pr2EEyi7ctY4AkveQI9DGIpg/edit?usp=sharing"
+          href="resume.pdf"
+          target="_blank"
         >
           check out my resume.
         </a>
