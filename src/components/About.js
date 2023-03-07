@@ -1,8 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
 import Emoji from "./Emoji"
+import { useStaticQuery, graphql } from "gatsby"
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { extension: { eq: "pdf" } }) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <>
       <h1 className="text-3xl mb-5 text-green-900 dark:text-green-400">
@@ -26,13 +40,18 @@ const About = () => {
           article about my journey into tech
         </Link>{" "}
         or{" "}
-        <a
-          className="linkUnderline dark:darkUnderline"
-          href="resume.pdf"
-          target="_blank"
-        >
-          check out my resume.
-        </a>
+        {data.allFile.edges.map(file => {
+          return (
+            <a
+              className="linkUnderline dark:darkUnderline"
+              href={file.node.publicURL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              check out my resume.
+            </a>
+          )
+        })}
       </p>
       <p className="mb-5">
         This digital garden is a place where I can take notes, share what I'm
